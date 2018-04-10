@@ -7,17 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE36AC68207CD935005504A0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE36AC67207CD935005504A0 /* MainViewController.swift */; };
+		AE36AC6A207CDB0C005504A0 /* BasicInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE36AC69207CDB0C005504A0 /* BasicInfoViewController.swift */; };
+		AE36AC6C207CDB25005504A0 /* DetailInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE36AC6B207CDB25005504A0 /* DetailInfoViewController.swift */; };
 		AE4B75BC2076348D000992A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4B75BB2076348D000992A3 /* AppDelegate.swift */; };
-		AE4B75BE2076348D000992A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4B75BD2076348D000992A3 /* ViewController.swift */; };
 		AE4B75C12076348D000992A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE4B75BF2076348D000992A3 /* Main.storyboard */; };
 		AE4B75C32076348D000992A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE4B75C22076348D000992A3 /* Assets.xcassets */; };
 		AE4B75C62076348D000992A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE4B75C42076348D000992A3 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE36AC67207CD935005504A0 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		AE36AC69207CDB0C005504A0 /* BasicInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicInfoViewController.swift; sourceTree = "<group>"; };
+		AE36AC6B207CDB25005504A0 /* DetailInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInfoViewController.swift; sourceTree = "<group>"; };
 		AE4B75B82076348D000992A3 /* SignUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE4B75BB2076348D000992A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AE4B75BD2076348D000992A3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AE4B75C02076348D000992A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AE4B75C22076348D000992A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE4B75C52076348D000992A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,11 +59,13 @@
 			isa = PBXGroup;
 			children = (
 				AE4B75BB2076348D000992A3 /* AppDelegate.swift */,
-				AE4B75BD2076348D000992A3 /* ViewController.swift */,
+				AE36AC67207CD935005504A0 /* MainViewController.swift */,
 				AE4B75BF2076348D000992A3 /* Main.storyboard */,
 				AE4B75C22076348D000992A3 /* Assets.xcassets */,
 				AE4B75C42076348D000992A3 /* LaunchScreen.storyboard */,
 				AE4B75C72076348D000992A3 /* Info.plist */,
+				AE36AC69207CDB0C005504A0 /* BasicInfoViewController.swift */,
+				AE36AC6B207CDB25005504A0 /* DetailInfoViewController.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -135,8 +141,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE4B75BE2076348D000992A3 /* ViewController.swift in Sources */,
+				AE36AC68207CD935005504A0 /* MainViewController.swift in Sources */,
+				AE36AC6A207CDB0C005504A0 /* BasicInfoViewController.swift in Sources */,
 				AE4B75BC2076348D000992A3 /* AppDelegate.swift in Sources */,
+				AE36AC6C207CDB25005504A0 /* DetailInfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
