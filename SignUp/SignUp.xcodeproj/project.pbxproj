@@ -60,12 +60,12 @@
 			children = (
 				AE4B75BB2076348D000992A3 /* AppDelegate.swift */,
 				AE36AC67207CD935005504A0 /* MainViewController.swift */,
+				AE36AC69207CDB0C005504A0 /* BasicInfoViewController.swift */,
+				AE36AC6B207CDB25005504A0 /* DetailInfoViewController.swift */,
 				AE4B75BF2076348D000992A3 /* Main.storyboard */,
 				AE4B75C22076348D000992A3 /* Assets.xcassets */,
 				AE4B75C42076348D000992A3 /* LaunchScreen.storyboard */,
 				AE4B75C72076348D000992A3 /* Info.plist */,
-				AE36AC69207CDB0C005504A0 /* BasicInfoViewController.swift */,
-				AE36AC6B207CDB25005504A0 /* DetailInfoViewController.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";

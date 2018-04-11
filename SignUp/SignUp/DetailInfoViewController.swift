@@ -20,7 +20,18 @@ class DetailInfoViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     @IBAction func detailViewDismiss() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func previous() {
+        /* roll back data to placeholder */
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func join() {
+        /* add new user info */
         self.dismiss(animated: true, completion: nil)
     }
 

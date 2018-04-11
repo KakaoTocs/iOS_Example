@@ -50,7 +50,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="Sign In"/>
                                         <connections>
-                                            <action selector="signInButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2PS-PF-XkA"/>
+                                            <action selector="signInButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="xTl-Fi-IsC"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyM-5T-ck9">
@@ -60,7 +60,7 @@
                                             <color key="titleColor" red="1" green="0.14925891545619319" blue="0.23771484952054356" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <connections>
-                                            <action selector="signUpButtonAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="PiX-RL-DQe"/>
+                                            <action selector="signUpButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lpt-VQ-LZv"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -99,7 +99,7 @@
         <!--Basic Info View Controller-->
         <scene sceneID="eKb-14-vm5">
             <objects>
-                <viewController id="v3x-8Z-5j2" customClass="BasicInfoViewController" customModule="SignUp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BasicInfoView" id="v3x-8Z-5j2" customClass="BasicInfoViewController" customModule="SignUp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5rH-r9-GyL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -114,23 +114,32 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="XTW-Aw-NOW">
                                 <rect key="frame" x="138" y="35" width="227" height="110"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PiG-jD-hDO">
+                                    <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PiG-jD-hDO">
                                         <rect key="frame" x="0.0" y="0.0" width="227" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="textFieldDidEndEditing:" destination="v3x-8Z-5j2" eventType="editingDidEnd" id="xng-8C-iTL"/>
+                                        </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aj1-ND-64A">
+                                    <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aj1-ND-64A">
                                         <rect key="frame" x="0.0" y="40" width="227" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="textFieldDidEndEditing:" destination="v3x-8Z-5j2" eventType="editingDidEnd" id="8ad-pe-1xz"/>
+                                        </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Check Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pdM-hq-e7M">
+                                    <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Check Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pdM-hq-e7M">
                                         <rect key="frame" x="0.0" y="80" width="227" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="textFieldDidEndEditing:" destination="v3x-8Z-5j2" eventType="editingDidEnd" id="hc3-gB-k25"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -154,7 +163,7 @@
                                             <color key="titleColor" red="1" green="0.11183061346261558" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <connections>
-                                            <action selector="basicViewDismiss" destination="v3x-8Z-5j2" eventType="touchUpInside" id="thA-mG-eC4"/>
+                                            <action selector="cancelButtonAction" destination="v3x-8Z-5j2" eventType="touchUpInside" id="SNc-8U-EFJ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tjJ-Tu-iJG">
@@ -164,6 +173,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="다음"/>
+                                        <connections>
+                                            <segue destination="QH7-eS-TFQ" kind="presentation" id="Z9S-QF-oro"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -190,6 +202,12 @@
                         <viewLayoutGuide key="safeArea" id="6kx-v8-H6x"/>
                     </view>
                     <navigationItem key="navigationItem" id="hEX-RP-sYh"/>
+                    <connections>
+                        <outlet property="introInputBox" destination="y1S-Un-HM1" id="9DI-eH-87C"/>
+                        <outlet property="nextButton" destination="tjJ-Tu-iJG" id="KbH-RM-Uem"/>
+                        <outlet property="profileImage" destination="rUe-6T-afy" id="wHz-6H-Weo"/>
+                        <outlet property="selfIntroBox" destination="y1S-Un-HM1" id="UL0-G6-ulZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C37-cG-5Ch" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -198,7 +216,7 @@
         <!--Detail Info View Controller-->
         <scene sceneID="xW9-5b-ExY">
             <objects>
-                <viewController id="QH7-eS-TFQ" customClass="DetailInfoViewController" customModule="SignUp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailInfoView" id="QH7-eS-TFQ" customClass="DetailInfoViewController" customModule="SignUp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nt3-09-1ke">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -219,13 +237,13 @@
                                 <rect key="frame" x="10" y="100.5" width="335" height="20.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="생년월일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zPp-C7-2Qp">
-                                        <rect key="frame" x="0.0" y="0.0" width="59" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="293" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6aP-Sx-Gb1">
-                                        <rect key="frame" x="59" y="0.0" width="276" height="20.5"/>
+                                        <rect key="frame" x="293" y="0.0" width="42" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -247,16 +265,25 @@
                                         <state key="normal" title="취소">
                                             <color key="titleColor" red="1" green="0.0093617555427757404" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
+                                        <connections>
+                                            <action selector="detailViewDismiss" destination="QH7-eS-TFQ" eventType="touchUpInside" id="ez6-VL-Lb3"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S3D-Hj-m0m">
                                         <rect key="frame" x="111.5" y="0.0" width="112" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="이전"/>
+                                        <connections>
+                                            <action selector="previous" destination="QH7-eS-TFQ" eventType="touchUpInside" id="ksm-ll-zzo"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l7Z-1N-62N">
                                         <rect key="frame" x="223.5" y="0.0" width="111.5" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="가입"/>
+                                        <connections>
+                                            <action selector="join" destination="QH7-eS-TFQ" eventType="touchUpInside" id="1f0-jm-Hje"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -285,6 +312,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Yx0-dt-R10"/>
                     </view>
+                    <navigationItem key="navigationItem" id="FyL-n6-5hE"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uBs-vH-LJv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
