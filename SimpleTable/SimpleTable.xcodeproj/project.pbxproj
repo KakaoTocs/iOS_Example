@@ -13,6 +13,7 @@
 		AE9D426F2088B5B300901286 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE9D426E2088B5B300901286 /* Assets.xcassets */; };
 		AE9D42722088B5B300901286 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE9D42702088B5B300901286 /* LaunchScreen.storyboard */; };
 		AEDB97E7208DFAC600D908BD /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDB97E6208DFAC600D908BD /* CustomTableViewCell.swift */; };
+		AEDB97E9208E019A00D908BD /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDB97E8208E019A00D908BD /* SecondViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		AE9D42712088B5B300901286 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE9D42732088B5B300901286 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEDB97E6208DFAC600D908BD /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		AEDB97E8208E019A00D908BD /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				AE9D42672088B5B200901286 /* AppDelegate.swift */,
 				AE9D42692088B5B200901286 /* ViewController.swift */,
 				AEDB97E6208DFAC600D908BD /* CustomTableViewCell.swift */,
+				AEDB97E8208E019A00D908BD /* SecondViewController.swift */,
 				AE9D426B2088B5B200901286 /* Main.storyboard */,
 				AE9D426E2088B5B300901286 /* Assets.xcassets */,
 				AE9D42702088B5B300901286 /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEDB97E9208E019A00D908BD /* SecondViewController.swift in Sources */,
 				AEDB97E7208DFAC600D908BD /* CustomTableViewCell.swift in Sources */,
 				AE9D426A2088B5B200901286 /* ViewController.swift in Sources */,
 				AE9D42682088B5B200901286 /* AppDelegate.swift in Sources */,
