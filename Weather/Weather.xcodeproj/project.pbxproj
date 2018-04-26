@@ -7,17 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE5C21492091CC6E005AFDED /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5C21482091CC6E005AFDED /* MainTableViewController.swift */; };
+		AE5C214B2091CC93005AFDED /* CityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5C214A2091CC93005AFDED /* CityTableViewController.swift */; };
+		AE5C214D2091CCB1005AFDED /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5C214C2091CCB1005AFDED /* WeatherViewController.swift */; };
+		AE5C214F2091DE14005AFDED /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5C214E2091DE14005AFDED /* Country.swift */; };
 		AE7A216B2090748B00D566B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7A216A2090748B00D566B5 /* AppDelegate.swift */; };
-		AE7A216D2090748B00D566B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7A216C2090748B00D566B5 /* ViewController.swift */; };
 		AE7A21702090748B00D566B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE7A216E2090748B00D566B5 /* Main.storyboard */; };
 		AE7A21722090748C00D566B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE7A21712090748C00D566B5 /* Assets.xcassets */; };
 		AE7A21752090748C00D566B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE7A21732090748C00D566B5 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE5C21482091CC6E005AFDED /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		AE5C214A2091CC93005AFDED /* CityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewController.swift; sourceTree = "<group>"; };
+		AE5C214C2091CCB1005AFDED /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		AE5C214E2091DE14005AFDED /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		AE7A21672090748B00D566B5 /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE7A216A2090748B00D566B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AE7A216C2090748B00D566B5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AE7A216F2090748B00D566B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AE7A21712090748C00D566B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE7A21742090748C00D566B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,7 +61,10 @@
 			isa = PBXGroup;
 			children = (
 				AE7A216A2090748B00D566B5 /* AppDelegate.swift */,
-				AE7A216C2090748B00D566B5 /* ViewController.swift */,
+				AE5C21482091CC6E005AFDED /* MainTableViewController.swift */,
+				AE5C214A2091CC93005AFDED /* CityTableViewController.swift */,
+				AE5C214C2091CCB1005AFDED /* WeatherViewController.swift */,
+				AE5C214E2091DE14005AFDED /* Country.swift */,
 				AE7A216E2090748B00D566B5 /* Main.storyboard */,
 				AE7A21712090748C00D566B5 /* Assets.xcassets */,
 				AE7A21732090748C00D566B5 /* LaunchScreen.storyboard */,
@@ -135,7 +144,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE7A216D2090748B00D566B5 /* ViewController.swift in Sources */,
+				AE5C214B2091CC93005AFDED /* CityTableViewController.swift in Sources */,
+				AE5C214D2091CCB1005AFDED /* WeatherViewController.swift in Sources */,
+				AE5C21492091CC6E005AFDED /* MainTableViewController.swift in Sources */,
+				AE5C214F2091DE14005AFDED /* Country.swift in Sources */,
 				AE7A216B2090748B00D566B5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
