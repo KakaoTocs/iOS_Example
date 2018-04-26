@@ -31,6 +31,10 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uV4-ex-vW1" userLabel="Tree Button">
                                                     <rect key="frame" x="15" y="7" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="JPo-9V-hiK"/>
+                                                        <constraint firstAttribute="height" constant="30" id="WAk-aL-P7y"/>
+                                                    </constraints>
                                                     <connections>
                                                         <action selector="expandWithSender:" destination="byo-fG-tly" eventType="touchUpInside" id="0ff-38-qBX"/>
                                                     </connections>
@@ -70,6 +74,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="oEx-2K-Kto" id="SIU-0G-btB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

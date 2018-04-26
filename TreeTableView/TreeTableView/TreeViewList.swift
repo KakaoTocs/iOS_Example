@@ -32,7 +32,6 @@ class TreeViewList {
         var nodes: [TreeViewNode] = []
         
         for data in dataList where data.level == 0 {
-            print("\(data.name)")
             
             let node: TreeViewNode = TreeViewNode()
             node.nodeLevel = data.level
@@ -56,7 +55,6 @@ class TreeViewList {
         var nodes: [TreeViewNode] = []
         
         for data in dataList where data.level == level && data.parentId == parentId {
-            print("\(data.name)")
             
             let node: TreeViewNode = TreeViewNode()
             node.nodeLevel = data.level

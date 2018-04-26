@@ -23,10 +23,8 @@ class TreeViewController: UIViewController, UITableViewDelegate, UITableViewData
         NotificationCenter.default.addObserver(self, selector: #selector(TreeViewController.ExpandCollapseNode(notification:)), name: NSNotification.Name(rawValue: "TreeNodeButtonClicked"), object: nil)
         
         data = TreeViewList.LoadInitialData()
-        print(data)
         
         nodes = TreeViewList.LoadInitialNodes(dataList: data)
-        print(nodes)
         
         self.LoadDisplayArray()
         self.tableView.reloadData()
