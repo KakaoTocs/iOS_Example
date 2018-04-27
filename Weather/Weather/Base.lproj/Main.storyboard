@@ -39,7 +39,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="PwJ-If-ldx" kind="show" id="JDP-79-Pes"/>
+                                            <segue destination="PwJ-If-ldx" kind="show" identifier="citySegue" id="JDP-79-Pes"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
