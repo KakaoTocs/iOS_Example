@@ -9,13 +9,39 @@
 import UIKit
 import Photos
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, PHPhotoLibraryChangeObserver {
     
     @IBOutlet weak var tableView: UITableView!
     
     var fetchResult: PHFetchResult<PHAsset>!
     let imageManager: PHCachingImageManager = PHCachingImageManager()
     let cellIdentifier: String = "cell"
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let asset: PHAsset = self.fetchResult[indexPath.row]
+            
+            PHPhotoLibrary.shared().performChanges({
+                PHAssetChangeRequest.deleteAssets([asset] as NSArray)
+                }, completionHandler: nil)
+        }
+    }
+    
+    func photoLibraryDidChange(_ changeInstance: PHChange) {
+        guard let changes = changeInstance.changeDetails(for: fetchResult) else {
+            return
+        }
+        
+        fetchResult = changes.fetchResultAfterChanges
+        
+        OperationQueue.main.addOperation {
+            self.tableView.reloadSections(IndexSet(0...0), with: .automatic)
+        }
+    }
     
     func requestCollection() {
         let cameraRoll: PHFetchResult<PHAssetCollection> = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .smartAlbumUserLibrary, options: nil)
@@ -25,7 +51,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         }
         
         let fetchOptions = PHFetchOptions()
-        fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationData", ascending: false)]
+        fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
         self.fetchResult = PHAsset.fetchAssets(in: cameraRollCollection, options: fetchOptions)
     }
 
@@ -37,6 +63,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         switch photoAurhorizationStatus {
         case .authorized:
             print("접근 허가됨")
+            self.requestCollection()
             OperationQueue.main.addOperation {
                 self.tableView.reloadData()
             }
@@ -49,7 +76,9 @@ class ViewController: UIViewController, UITableViewDataSource {
                 case .authorized:
                     print("사용자가 허용함")
                     self.requestCollection()
-                    self.tableView.reloadData()
+                    OperationQueue.main.addOperation {
+                        self.tableView.reloadData()
+                    }
                 case .denied:
                     print("사용자가 불허함")
                 default:
@@ -59,6 +88,11 @@ class ViewController: UIViewController, UITableViewDataSource {
         case .restricted:
             print("접근 제한")
         }
+        PHPhotoLibrary.shared().register(self)
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.fetchResult?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -71,10 +105,6 @@ class ViewController: UIViewController, UITableViewDataSource {
         })
         
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.fetchResult?.count ?? 0
     }
     
     override func didReceiveMemoryWarning() {
