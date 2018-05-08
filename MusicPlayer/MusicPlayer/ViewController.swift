@@ -22,6 +22,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     
     // MARK: - Methods
     // MARK: Custom Method
+    
+    // 실행시 초기화 함수
     func initializePlayer() {
         guard let soundAsset: NSDataAsset = NSDataAsset(name: "sound") else {
             print("음원 파일 에셋을 찾을 수 없습니다")
@@ -36,11 +38,12 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             print("코드: \(error.code), 메세지: \(error.localizedDescription)")
         }
         
-        self.progressSlider.minimumValue = Float(self.player.duration)
+        self.progressSlider.maximumValue = Float(self.player.duration)
         self.progressSlider.minimumValue = 0
         self.progressSlider.value = Float(self.player.currentTime)
     }
     
+    // 타임 레이블 값 업데이트 함수
     func updateTimeLabelText(time: TimeInterval) {
         let minute: Int = Int(time / 60)
         let second: Int = Int(time.truncatingRemainder(dividingBy: 60))
@@ -51,10 +54,13 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         self.timeLabel.text = timeText
     }
     
+    // 타이머 설정 함수
     func makeAndFireTimer() {
         self.timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: { [unowned self] (timer: Timer) in
             
-            if self.progressSlider.isTracking { return }
+            if self.progressSlider.isTracking {
+                return
+            }
             
             self.updateTimeLabelText(time: self.player.currentTime)
             self.progressSlider.value = Float(self.player.currentTime)
@@ -62,6 +68,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         self.timer.fire()
     }
     
+    // 타이머 제거 함수
     func invalidateTimer() {
         self.timer.invalidate()
         self.timer = nil
@@ -80,6 +87,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     // MARK: IBActions
+    // 재생 버튼 액션 함수
     @IBAction func touchUpPlayPlauseButton(_ sender: UIButton) {
         
         sender.isSelected = !sender.isSelected
@@ -97,6 +105,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         }
     }
     
+    // 슬라이더 액션 함수
     @IBAction func sliderValueChanged(_ sender: UISlider) {
         self.updateTimeLabelText(time: TimeInterval(sender.value))
         if sender.isTracking {return }
@@ -104,6 +113,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     // MARK: AVAudioPlayerDelegate
+    // 에러 처리(Alert)
     func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer, error: Error?) {
         
         guard let error: Error = error else {
@@ -125,6 +135,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         self.present(alert, animated: true, completion: nil)
     }
     
+    // 오디오 재생이 끝났을떄
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         self.playPauseButton.isSelected = false
         self.progressSlider.value = 0
