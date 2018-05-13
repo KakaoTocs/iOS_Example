@@ -26,7 +26,7 @@ class ViewController: UIViewController {
 
     @IBAction func ConvertButtonAction(_ sender: UIButton) {
         let inputData = inputTextField?.text!
-        outputTextView?.text = String.md5(inputData!)()
+        outputTextView?.text = String.toMD5(inputData!)()
     }
     
 }

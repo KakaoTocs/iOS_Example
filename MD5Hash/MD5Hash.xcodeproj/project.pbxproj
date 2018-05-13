@@ -16,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE09011C20A7EC4800AA118A /* module.map */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.map; sourceTree = "<group>"; };
 		AED4CDE420A6C03700CDE8F1 /* MD5Hash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MD5Hash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AED4CDE720A6C03700CDE8F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AED4CDE920A6C03700CDE8F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,7 +25,6 @@
 		AED4CDF120A6C03800CDE8F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AED4CDF320A6C03800CDE8F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AED4CDF920A6C0CC00CDE8F1 /* com.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = com.swift; sourceTree = "<group>"; };
-		AED4CE0120A6CAC200CDE8F1 /* module.map */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.map; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,10 +38,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE09011B20A7EC3900AA118A /* CommonCrypto */ = {
+			isa = PBXGroup;
+			children = (
+				AE09011C20A7EC4800AA118A /* module.map */,
+			);
+			path = CommonCrypto;
+			sourceTree = "<group>";
+		};
 		AED4CDDB20A6C03700CDE8F1 = {
 			isa = PBXGroup;
 			children = (
-				AED4CE0020A6CA4F00CDE8F1 /* CommonCrypto */,
+				AE09011B20A7EC3900AA118A /* CommonCrypto */,
 				AED4CDE620A6C03700CDE8F1 /* MD5Hash */,
 				AED4CDE520A6C03700CDE8F1 /* Products */,
 				AED4CDFD20A6C50100CDE8F1 /* Frameworks */,
@@ -75,14 +83,6 @@
 			children = (
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		AED4CE0020A6CA4F00CDE8F1 /* CommonCrypto */ = {
-			isa = PBXGroup;
-			children = (
-				AED4CE0120A6CAC200CDE8F1 /* module.map */,
-			);
-			path = CommonCrypto;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
