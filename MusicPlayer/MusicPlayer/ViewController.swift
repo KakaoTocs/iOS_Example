@@ -93,15 +93,11 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         sender.isSelected = !sender.isSelected
         
         if sender.isSelected {
+            self.makeAndFireTimer()
             self.player?.play()
         } else {
-            self.player?.pause()
-        }
-        
-        if sender.isSelected {
-            self.makeAndFireTimer()
-        } else {
             self.invalidateTimer()
+            self.player?.pause()
         }
     }
     
