@@ -8,8 +8,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
-     // !! basic info input view 모달 present 부터!!--------------------------------------
+class MainViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var idInputBox: UITextField!
     @IBOutlet weak var passwordInputBox: UITextField!
     
@@ -31,28 +30,25 @@ class MainViewController: UIViewController {
     }
 
     @IBAction func signInButton() {
-        let defaults = UserDefaults.standard
-    
-        if let id: String = idInputBox.text, let pw: String = passwordInputBox.text, id != "", pw != "" {
-            let ids: Array<String> = defaults.object(forKey: "ids") as! Array<String>
-            let pws: Array<String> = defaults.object(forKey: "pws") as! Array<String>
+        if let id: String = idInputBox.text,
+            let pw: String = passwordInputBox.text,
+            id != "",
+            pw != "" {
             
-            if(ids.contains(id) && pws.contains(pw)) {
-                print("Login Success")
+            if(UserInformation.check(id: id, pw: pw)) {
+                print("로그인 성공!!")
             }
             else {
-                print("ID or Password Error")
+                print("아이디 또는 비밀번호가 틀렸습니다.")
             }
         }
         else {
-            print("Check ID or Password")
+            print("아이디 혹은 비밀번호가 입력 되었는지 확인 하세요.")
         }
     }
     
-    @IBAction func signUpButton() {
-        if let basicInfoViewController = self.storyboard?.instantiateViewController(withIdentifier: "BasicInfoView") as? BasicInfoViewController {
-            self.present(basicInfoViewController, animated: true, completion: nil)
-        }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     /*
