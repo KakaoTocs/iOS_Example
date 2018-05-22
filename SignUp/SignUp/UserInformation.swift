@@ -7,15 +7,31 @@
 //
 
 import Foundation
+import UIKit
 
 class UserInformation {
     static let shared: UserInformation = UserInformation()
     
-    var id: String!
-    var pw: String!
-    var pwCheck: String!
+    var id: String?
+    var pw: String?
+    var pwCheck: String?
+    var introduce: String?
+    var profileImage: UIImage?
+    var phoneNumber: String?
+    var birthday: String?
     
-    var userDetailInfo: Dictionary<String, String> = [String: String]()
+    var userDetailInfo: Dictionary<String, Any>? {
+        get {
+            if let intro = self.introduce,
+                let profile = self.profileImage,
+                let phone = self.phoneNumber,
+                let birth = self.birthday {
+                return ["intro": intro, "profile": profile, "phone": phone, "birth": birth]
+            } else {
+                return nil
+            }
+        }
+    }
     
     static func save(user: UserInformation) -> Void {
         let defaults = UserDefaults.standard
@@ -23,12 +39,18 @@ class UserInformation {
         var ids: Array<String> = defaults.object(forKey: "ids") as! Array<String>
         var pws: Array<String> = defaults.object(forKey: "pws") as! Array<String>
         
-        ids.append(user.id)
-        pws.append(user.pw)
+        if let userID = user.id,
+            let userPW = user.pw,
+            let userInfo = user.userDetailInfo {
+            
+            ids.append(userID)
+            pws.append(userPW)
+            
+            defaults.set(ids, forKey: "ids")
+            defaults.set(pws, forKey: "pws")
+            defaults.set(userInfo, forKey: userID)
+        }
         
-        defaults.set(ids, forKey: "ids")
-        defaults.set(pws, forKey: "pws")
-        defaults.set(user.userDetailInfo, forKey: user.id)
     }
     
     static func check(id: String, pw: String) -> Bool {

@@ -8,6 +8,10 @@
 
 import UIKit
 
+// 가입 버튼 비활성화
+// 가입시 메인에 아이디 자동 입력
+// 이전시 현재 입력된 정보 저장
+
 class DetailInfoViewController: UIViewController {
     
     @IBOutlet weak var phoneNumberInputBox: UITextField!
@@ -71,15 +75,5 @@ class DetailInfoViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

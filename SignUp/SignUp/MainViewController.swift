@@ -9,19 +9,14 @@
 import UIKit
 
 class MainViewController: UIViewController, UITextFieldDelegate {
+    
     @IBOutlet weak var idInputBox: UITextField!
     @IBOutlet weak var passwordInputBox: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let defaults = UserDefaults.standard
-        
-        let ids: Array<String> = [""]
-        let pws: Array<String> = [""]
-        
-        defaults.set(ids, forKey: "ids")
-        defaults.set(pws, forKey: "pws")
+        initialData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,14 +46,16 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
     }
     
-    /*
-    // MARK: - Navigation
+    
+    func initialData() -> Void {
+        let defaults = UserDefaults.standard
+        
+        let ids: Array<String> = [""]
+        let pws: Array<String> = [""]
+        
+        defaults.set(ids, forKey: "ids")
+        defaults.set(pws, forKey: "pws")
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
-    */
 
 }

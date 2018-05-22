@@ -11,13 +11,13 @@ import Photos
 
 class BasicInfoViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    // Input
     @IBOutlet weak var idInputBox: UITextField!
     @IBOutlet weak var pwInputBox: UITextField!
     @IBOutlet weak var pwCheckInputBox: UITextField!
     @IBOutlet weak var introInputBox: UITextView!
-    
     @IBOutlet weak var profileImage: UIImageView!
-    
+    // Button
     @IBOutlet weak var nextButton: UIButton!
     
     var pwTemp: String = "", pwCheckTemp: String = ""
@@ -25,8 +25,7 @@ class BasicInfoViewController: UIViewController, UITextFieldDelegate, UITextView
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        
+        //
         nextButton.isEnabled = false
         profileImage.isUserInteractionEnabled = true
         profileImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(profileImageTapped)))
@@ -49,17 +48,13 @@ class BasicInfoViewController: UIViewController, UITextFieldDelegate, UITextView
     // MARK: 다음 버튼
     @IBAction func nextButtonAction() {
         
-        if introInputBox.text == "", idInputBox.text != "", pwInputBox.text != "" {
-            print("intro \"\"")
-        }
-        else {
-            UserInformation.shared.id = idInputBox.text
-            UserInformation.shared.pw = pwInputBox.text
-            UserInformation.shared.userDetailInfo["selfIntro"] = introInputBox.text
-            
-            if let detailInfoViewController = self.storyboard?.instantiateViewController(withIdentifier: "DetailInfoView") as? DetailInfoViewController {
-                self.navigationController?.pushViewController(detailInfoViewController, animated: true)
-            }
+        UserInformation.shared.id = idInputBox.text
+        UserInformation.shared.pw = pwInputBox.text
+        UserInformation.shared.introduce = introInputBox.text
+        UserInformation.shared.profileImage = profileImage.image
+        
+        if let detailInfoViewController = self.storyboard?.instantiateViewController(withIdentifier: "DetailInfoView") as? DetailInfoViewController {
+            self.navigationController?.pushViewController(detailInfoViewController, animated: true)
         }
     }
     
@@ -143,18 +138,9 @@ class BasicInfoViewController: UIViewController, UITextFieldDelegate, UITextView
         self.dismiss(animated: true, completion: nil)
     }
     
+    // MARK: 키보드 토글 설정
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
