@@ -11,13 +11,13 @@ import Photos
 
 class BasicInfoViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    // Input
+    // MARK: Input
     @IBOutlet weak var idInputBox: UITextField!
     @IBOutlet weak var pwInputBox: UITextField!
     @IBOutlet weak var pwCheckInputBox: UITextField!
     @IBOutlet weak var introInputBox: UITextView!
     @IBOutlet weak var profileImage: UIImageView!
-    // Button
+    // MARK: Button
     @IBOutlet weak var nextButton: UIButton!
     
     var pwTemp: String = "", pwCheckTemp: String = ""
@@ -59,7 +59,7 @@ class BasicInfoViewController: UIViewController, UITextFieldDelegate, UITextView
     }
     
     @IBAction func textFieldDidEndEditing(_ textField: UITextField) {
-        // MARK: textFiled 값 읽기
+        // textFiled 값 읽기
         switch textField.tag {
             case 2:
                 pwTemp = textField.text!
@@ -68,9 +68,13 @@ class BasicInfoViewController: UIViewController, UITextFieldDelegate, UITextView
             default:
                 return
         }
-        
+        print(profileImage.image)
         // MARK: 다음 버튼 활성화 여부
-        if pwTemp == pwCheckTemp && pwTemp != "" && idInputBox.text! != "" && introInputBox.text! != "" {
+        if pwTemp == pwCheckTemp,
+            pwTemp != "",
+            idInputBox.text! != "",
+            introInputBox.text! != "",
+            profileImage.image != nil {
             nextButton.isEnabled = true
         }
         else {
@@ -82,7 +86,8 @@ class BasicInfoViewController: UIViewController, UITextFieldDelegate, UITextView
         if pwTemp == pwCheckTemp,
             pwTemp != "",
             idInputBox.text! != "",
-            introInputBox.text! != "" {
+            introInputBox.text! != "",
+            profileImage.image != nil {
             nextButton.isEnabled = true
         }
         else {
@@ -106,6 +111,7 @@ class BasicInfoViewController: UIViewController, UITextFieldDelegate, UITextView
         return picker
     }()
     
+    // imagePicker Cancel 버튼 생성
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -135,6 +141,7 @@ class BasicInfoViewController: UIViewController, UITextFieldDelegate, UITextView
             }
             */
         }
+        nextButton.isEnabled = true
         self.dismiss(animated: true, completion: nil)
     }
     

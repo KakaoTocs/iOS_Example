@@ -33,15 +33,16 @@ class UserInformation {
         }
     }
     
-    static func save(user: UserInformation) -> Void {
+    // 저장
+    func save() -> Void {
         let defaults = UserDefaults.standard
         
         var ids: Array<String> = defaults.object(forKey: "ids") as! Array<String>
         var pws: Array<String> = defaults.object(forKey: "pws") as! Array<String>
         
-        if let userID = user.id,
-            let userPW = user.pw,
-            let userInfo = user.userDetailInfo {
+        if let userID = self.id,
+            let userPW = self.pw,
+            let userInfo = self.userDetailInfo {
             
             ids.append(userID)
             pws.append(userPW)
@@ -53,17 +54,33 @@ class UserInformation {
         
     }
     
-    static func check(id: String, pw: String) -> Bool {
+    // id, pw일치하는지 체크
+    func check() -> Bool {
         let defaults = UserDefaults.standard
         
         let ids: Array<String> = defaults.object(forKey: "ids") as! Array<String>
         let pws: Array<String> = defaults.object(forKey: "pws") as! Array<String>
         
-        if ids.contains(id), pws.contains(pw) {
-            return true
-        }
-        else {
+        if let id = self.id,
+            let pw = self.pw {
+            if ids.contains(id), pws.contains(pw) {
+                return true
+            } else {
+                return false
+            }
+        } else {
             return false
         }
+    }
+    
+    // 싱글톤에 저장된 데이터 지우기
+    func clear() -> Void {
+        self.id = nil
+        self.pw = nil
+        self.pwCheck = nil
+        self.introduce = nil
+        self.profileImage = nil
+        self.phoneNumber = nil
+        self.birthday = nil
     }
 }

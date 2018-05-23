@@ -21,16 +21,16 @@ class MainViewController: UIViewController, UITextFieldDelegate {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
+    // MARK: 로그인 버튼
     @IBAction func signInButton() {
         if let id: String = idInputBox.text,
             let pw: String = passwordInputBox.text,
             id != "",
             pw != "" {
             
-            if(UserInformation.check(id: id, pw: pw)) {
+            if(UserInformation.shared.check()) {
                 print("로그인 성공!!")
             }
             else {
@@ -42,11 +42,12 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    // MARK: 키보드 토글
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     
-    
+    // UserDefaults 초기화
     func initialData() -> Void {
         let defaults = UserDefaults.standard
         

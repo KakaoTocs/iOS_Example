@@ -103,7 +103,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140" y="33.733133433283363"/>
+            <point key="canvasLocation" x="908" y="725"/>
         </scene>
         <!--Basic Info View Controller-->
         <scene sceneID="eKb-14-vm5">
@@ -268,7 +268,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="____년  __ 월  __일" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6aP-Sx-Gb1">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2000년 04월 04일" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6aP-Sx-Gb1">
                                         <rect key="frame" x="80" y="0.0" width="275" height="20.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="YE5-sb-28h"/>
@@ -316,6 +316,7 @@
                                         <state key="normal" title="가입"/>
                                         <connections>
                                             <action selector="join" destination="QH7-eS-TFQ" eventType="touchUpInside" id="FEM-Hk-BfG"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="3fS-ae-0a3"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -355,7 +356,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uBs-vH-LJv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2661.5999999999999" y="33.733133433283363"/>
+            <point key="canvasLocation" x="1847" y="725"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Wgi-c3-I4U">

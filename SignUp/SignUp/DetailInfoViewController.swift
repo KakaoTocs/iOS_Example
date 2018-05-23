@@ -27,12 +27,12 @@ class DetailInfoViewController: UIViewController {
     
     // MARK: 회원 가입 취소
     @IBAction func detailViewDismiss() {
+        UserInformation.shared.clear()
         self.dismiss(animated: true, completion: nil)
     }
     
     // MARK: 뒤로 가기
     @IBAction func previous() {
-        /* roll back data to placeholder */
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -40,11 +40,12 @@ class DetailInfoViewController: UIViewController {
     @IBAction func join() {
         /* add new user info */
         
-        if phoneNumberInputBox.text != "" {
-            UserInformation.shared.userDetailInfo["phoneNumber"] = phoneNumberInputBox.text
-            UserInformation.shared.userDetailInfo["birthday"] = pickedBirthday.text
+        if phoneNumberInputBox.text != "",
+            pickedBirthday.text != ""{
+            UserInformation.shared.phoneNumber = phoneNumberInputBox.text
+            UserInformation.shared.birthday = pickedBirthday.text
             
-            UserInformation.save(user: UserInformation.shared)
+            UserInformation.shared.save()
             
             self.dismiss(animated: true, completion: nil)
         }
@@ -64,10 +65,6 @@ class DetailInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let date: Date = self.datePicker.date
-        let dateString: String = self.dateFormatter.string(from: date)
-        pickedBirthday.text = dateString
         
         self.datePicker.addTarget(self, action: #selector(self.didDatePickerValueChanged(_:)), for: UIControlEvents.valueChanged)
     }
