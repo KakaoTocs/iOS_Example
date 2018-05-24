@@ -33,13 +33,15 @@ class DetailInfoViewController: UIViewController {
     
     // MARK: 뒤로 가기
     @IBAction func previous() {
+        if let phoneNumber = phoneNumberInputBox.text,
+            phoneNumber != "" {
+            UserInformation.shared.phoneNumber = phoneNumber
+        }
         self.navigationController?.popViewController(animated: true)
     }
     
     // MARK: 회원 가입
     @IBAction func join() {
-        /* add new user info */
-        
         if phoneNumberInputBox.text != "",
             pickedBirthday.text != ""{
             UserInformation.shared.phoneNumber = phoneNumberInputBox.text
@@ -52,7 +54,6 @@ class DetailInfoViewController: UIViewController {
         else {
             print("빈칸을 확인 하세요")
         }
-        
     }
 
     @IBAction func didDatePickerValueChanged(_ sender: UIDatePicker) {
@@ -60,7 +61,7 @@ class DetailInfoViewController: UIViewController {
         let dateString: String = self.dateFormatter.string(from: date)
         
         self.pickedBirthday.text = dateString
-        
+        UserInformation.shared.birthday = dateString
     }
     
     override func viewDidLoad() {
@@ -69,6 +70,7 @@ class DetailInfoViewController: UIViewController {
         self.datePicker.addTarget(self, action: #selector(self.didDatePickerValueChanged(_:)), for: UIControlEvents.valueChanged)
     }
     
+    // 키보드 토글
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }

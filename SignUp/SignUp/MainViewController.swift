@@ -29,7 +29,10 @@ class MainViewController: UIViewController, UITextFieldDelegate {
             let pw: String = passwordInputBox.text,
             id != "",
             pw != "" {
-            
+
+            UserInformation.shared.id = id
+            UserInformation.shared.pw = pw
+
             if(UserInformation.shared.check()) {
                 print("로그인 성공!!")
             }

@@ -11,13 +11,11 @@ import Photos
 
 class BasicInfoViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    // MARK: Input
     @IBOutlet weak var idInputBox: UITextField!
     @IBOutlet weak var pwInputBox: UITextField!
     @IBOutlet weak var pwCheckInputBox: UITextField!
     @IBOutlet weak var introInputBox: UITextView!
     @IBOutlet weak var profileImage: UIImageView!
-    // MARK: Button
     @IBOutlet weak var nextButton: UIButton!
     
     var pwTemp: String = "", pwCheckTemp: String = ""
@@ -25,8 +23,9 @@ class BasicInfoViewController: UIViewController, UITextFieldDelegate, UITextView
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //
+        // 다음 버튼 비활성화
         nextButton.isEnabled = false
+        // 프로필 이미지 터치 설정
         profileImage.isUserInteractionEnabled = true
         profileImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(profileImageTapped)))
     }
@@ -42,6 +41,7 @@ class BasicInfoViewController: UIViewController, UITextFieldDelegate, UITextView
     
     // MARK: 취소 버튼
     @IBAction func cancelButtonAction() {
+        UserInformation.shared.clear()
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -53,11 +53,13 @@ class BasicInfoViewController: UIViewController, UITextFieldDelegate, UITextView
         UserInformation.shared.introduce = introInputBox.text
         UserInformation.shared.profileImage = profileImage.image
         
+        // 다음 뷰로 전환
         if let detailInfoViewController = self.storyboard?.instantiateViewController(withIdentifier: "DetailInfoView") as? DetailInfoViewController {
             self.navigationController?.pushViewController(detailInfoViewController, animated: true)
         }
     }
     
+    // MARK: 데이터 입력이 끝났을때
     @IBAction func textFieldDidEndEditing(_ textField: UITextField) {
         // textFiled 값 읽기
         switch textField.tag {
@@ -69,7 +71,7 @@ class BasicInfoViewController: UIViewController, UITextFieldDelegate, UITextView
                 return
         }
         print(profileImage.image)
-        // MARK: 다음 버튼 활성화 여부
+        // 다음 버튼 활성화 여부
         if pwTemp == pwCheckTemp,
             pwTemp != "",
             idInputBox.text! != "",
@@ -95,13 +97,7 @@ class BasicInfoViewController: UIViewController, UITextFieldDelegate, UITextView
         }
     }
     
-    // MARK: 프로필 사진 터치
-    @objc func profileImageTapped(sender: UITapGestureRecognizer) {
-        if(sender.state == .ended) {
-            self.present(self.imagePicker, animated: true, completion: nil)
-        }
-    }
-    
+    // imagePicker 생성
     lazy var imagePicker: UIImagePickerController = {
         let picker: UIImagePickerController = UIImagePickerController()
         picker.sourceType = .photoLibrary
@@ -110,6 +106,13 @@ class BasicInfoViewController: UIViewController, UITextFieldDelegate, UITextView
         
         return picker
     }()
+
+    // MARK: 프로필 사진 터치
+    @objc func profileImageTapped(sender: UITapGestureRecognizer) {
+        if(sender.state == .ended) {
+            self.present(self.imagePicker, animated: true, completion: nil)
+        }
+    }
     
     // imagePicker Cancel 버튼 생성
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
