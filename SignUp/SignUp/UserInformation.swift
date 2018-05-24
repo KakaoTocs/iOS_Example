@@ -17,15 +17,27 @@ class UserInformation {
     var pwCheck: String?
     var introduce: String?
     var profileImage: UIImage?
+    var profileImageData: Data? {
+        get {
+            if let image = self.profileImage {
+                let jpgImage = UIImageJPEGRepresentation(image, 1)
+                return jpgImage
+                
+            } else {
+                return nil
+            }
+        }
+    }
     var phoneNumber: String?
     var birthday: String?
     
     var userDetailInfo: Dictionary<String, Any>? {
         get {
             if let intro = self.introduce,
-                let profile = self.profileImage,
+                let profile = self.profileImageData,
                 let phone = self.phoneNumber,
                 let birth = self.birthday {
+                print(["intro": intro, "profile": profile, "phone": phone, "birth": birth])
                 return ["intro": intro, "profile": profile, "phone": phone, "birth": birth]
             } else {
                 return nil

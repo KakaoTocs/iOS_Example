@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController, UITextFieldDelegate {
+class MainViewController: UIViewController {
     
     @IBOutlet weak var idInputBox: UITextField!
     @IBOutlet weak var passwordInputBox: UITextField!
@@ -21,6 +21,12 @@ class MainViewController: UIViewController, UITextFieldDelegate {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let id = UserInformation.shared.id {
+            idInputBox.text = id
+        }
     }
 
     // MARK: 로그인 버튼

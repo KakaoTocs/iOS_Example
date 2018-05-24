@@ -30,6 +30,7 @@ class BasicInfoViewController: UIViewController, UITextFieldDelegate, UITextView
         profileImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(profileImageTapped)))
     }
     
+    // 네비게이션바 숨기기
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
@@ -47,7 +48,6 @@ class BasicInfoViewController: UIViewController, UITextFieldDelegate, UITextView
     
     // MARK: 다음 버튼
     @IBAction func nextButtonAction() {
-        
         UserInformation.shared.id = idInputBox.text
         UserInformation.shared.pw = pwInputBox.text
         UserInformation.shared.introduce = introInputBox.text
@@ -59,7 +59,7 @@ class BasicInfoViewController: UIViewController, UITextFieldDelegate, UITextView
         }
     }
     
-    // MARK: 데이터 입력이 끝났을때
+    // MARK: 정보 입력이 끝났을때
     @IBAction func textFieldDidEndEditing(_ textField: UITextField) {
         // textFiled 값 읽기
         switch textField.tag {
@@ -70,7 +70,6 @@ class BasicInfoViewController: UIViewController, UITextFieldDelegate, UITextView
             default:
                 return
         }
-        print(profileImage.image)
         // 다음 버튼 활성화 여부
         if pwTemp == pwCheckTemp,
             pwTemp != "",
@@ -122,29 +121,18 @@ class BasicInfoViewController: UIViewController, UITextFieldDelegate, UITextView
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage: UIImage = info[UIImagePickerControllerEditedImage] as? UIImage {
             self.profileImage.image = pickedImage
-            
-            if let asset = info[UIImagePickerControllerPHAsset] as? PHAsset {
-                if let fileName = (asset.value(forKey: "filename")) as? String {
-                    print(fileName)
-                }
-//                if let temp = PHAsset.fetchAssets
-            }
-            /*
-            if let imageUrl: URL = info[UIImagePickerControllerReferenceURL] as? URL{
-                if let asset: PHAsset = PHAsset.fetchAssets(withALAssetURLs: [imageUrl], options: nil).firstObject as! PHAsset {
-                    print(asset.location)
-                    print(asset.creationDate)
-                }
-                else {
-                    print("Fail")
-                }
-            }
-            else {
-                print("no metadata")
-            }
-            */
         }
-        nextButton.isEnabled = true
+        
+        if pwTemp == pwCheckTemp,
+            pwTemp != "",
+            idInputBox.text! != "",
+            introInputBox.text! != "",
+            profileImage.image != nil {
+            nextButton.isEnabled = true
+        } else {
+            nextButton.isEnabled = false
+        }
+        
         self.dismiss(animated: true, completion: nil)
     }
     
