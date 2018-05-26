@@ -7,16 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE1A5A3520B913DF00B9ED66 /* TypeConvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A5A3420B913DF00B9ED66 /* TypeConvert.swift */; };
 		AEDC732420AD9187004FE2FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDC732320AD9187004FE2FC /* AppDelegate.swift */; };
 		AEDC732620AD9187004FE2FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDC732520AD9187004FE2FC /* ViewController.swift */; };
 		AEDC732920AD9187004FE2FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEDC732720AD9187004FE2FC /* Main.storyboard */; };
 		AEDC732B20AD9188004FE2FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEDC732A20AD9188004FE2FC /* Assets.xcassets */; };
 		AEDC732E20AD9188004FE2FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEDC732C20AD9188004FE2FC /* LaunchScreen.storyboard */; };
 		AEDC733820AD9208004FE2FC /* MD5Hash.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDC733720AD9208004FE2FC /* MD5Hash.swift */; };
-		AEDC733A20AD92CB004FE2FC /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDC733920AD92CB004FE2FC /* Socket.swift */; };
+		C03075A820B9797A00D0DC5F /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03075A720B9797900D0DC5F /* Socket.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE1A5A3420B913DF00B9ED66 /* TypeConvert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeConvert.swift; sourceTree = "<group>"; };
 		AEDC732020AD9187004FE2FC /* SocketStream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocketStream.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEDC732320AD9187004FE2FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEDC732520AD9187004FE2FC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -26,7 +28,7 @@
 		AEDC732F20AD9188004FE2FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEDC733620AD91CE004FE2FC /* module.map */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.map; sourceTree = "<group>"; };
 		AEDC733720AD9208004FE2FC /* MD5Hash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MD5Hash.swift; sourceTree = "<group>"; };
-		AEDC733920AD92CB004FE2FC /* Socket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Socket.swift; path = ../../MyDatePicker/Socket.swift; sourceTree = "<group>"; };
+		C03075A720B9797900D0DC5F /* Socket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Socket.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 		AEDC732220AD9187004FE2FC /* SocketStream */ = {
 			isa = PBXGroup;
 			children = (
+				C03075A720B9797900D0DC5F /* Socket.swift */,
 				AEDC732320AD9187004FE2FC /* AppDelegate.swift */,
 				AEDC732520AD9187004FE2FC /* ViewController.swift */,
 				AEDC732720AD9187004FE2FC /* Main.storyboard */,
@@ -67,7 +70,7 @@
 				AEDC732C20AD9188004FE2FC /* LaunchScreen.storyboard */,
 				AEDC732F20AD9188004FE2FC /* Info.plist */,
 				AEDC733720AD9208004FE2FC /* MD5Hash.swift */,
-				AEDC733920AD92CB004FE2FC /* Socket.swift */,
+				AE1A5A3420B913DF00B9ED66 /* TypeConvert.swift */,
 			);
 			path = SocketStream;
 			sourceTree = "<group>";
@@ -151,10 +154,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AEDC733A20AD92CB004FE2FC /* Socket.swift in Sources */,
 				AEDC732620AD9187004FE2FC /* ViewController.swift in Sources */,
+				C03075A820B9797A00D0DC5F /* Socket.swift in Sources */,
 				AEDC732420AD9187004FE2FC /* AppDelegate.swift in Sources */,
 				AEDC733820AD9208004FE2FC /* MD5Hash.swift in Sources */,
+				AE1A5A3520B913DF00B9ED66 /* TypeConvert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

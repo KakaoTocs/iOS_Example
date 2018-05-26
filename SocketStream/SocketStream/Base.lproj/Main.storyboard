@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s9l-vu-hOW">
-                                <rect key="frame" x="0.0" y="607" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="577" width="375" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qZo-vW-Ta2">
                                         <rect key="frame" x="0.0" y="0.0" width="125" height="30"/>
@@ -49,7 +49,7 @@
                                 </constraints>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Socket Info" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eVS-3Y-wdb">
-                                <rect key="frame" x="20" y="90" width="335" height="497"/>
+                                <rect key="frame" x="20" y="90" width="335" height="467"/>
                                 <color key="backgroundColor" red="0.82298503587575067" green="0.92952887055837563" blue="0.85327539473698644" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -60,6 +60,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uzu-nk-XkV">
+                                <rect key="frame" x="20" y="627" width="335" height="30"/>
+                                <state key="normal" title="Disconnection"/>
+                                <connections>
+                                    <action selector="disconnectionAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="csn-94-9hm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -67,12 +74,15 @@
                             <constraint firstItem="s9l-vu-hOW" firstAttribute="top" secondItem="eVS-3Y-wdb" secondAttribute="bottom" constant="20" id="O0X-jN-SmZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eVS-3Y-wdb" secondAttribute="trailing" constant="20" id="Osf-AI-8PS"/>
                             <constraint firstItem="yWz-nc-egm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Qfl-9y-BmL"/>
+                            <constraint firstItem="Uzu-nk-XkV" firstAttribute="top" secondItem="s9l-vu-hOW" secondAttribute="bottom" constant="20" id="WsN-7U-jpE"/>
+                            <constraint firstItem="Uzu-nk-XkV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="XFD-DB-fWK"/>
                             <constraint firstItem="s9l-vu-hOW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ytk-Pe-yPq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Uzu-nk-XkV" secondAttribute="trailing" constant="20" id="agN-jj-dvr"/>
                             <constraint firstItem="yWz-nc-egm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="bpA-M1-lB4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Uzu-nk-XkV" secondAttribute="bottom" constant="10" id="du4-Xp-3ut"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="s9l-vu-hOW" secondAttribute="trailing" id="fob-k4-aYp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yWz-nc-egm" secondAttribute="trailing" constant="20" id="rB1-8v-CTY"/>
                             <constraint firstItem="eVS-3Y-wdb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="utf-wi-GPI"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="s9l-vu-hOW" secondAttribute="bottom" constant="30" id="vuW-R6-I7N"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
