@@ -62,7 +62,6 @@
 		AEDC732220AD9187004FE2FC /* SocketStream */ = {
 			isa = PBXGroup;
 			children = (
-				C03075A720B9797900D0DC5F /* Socket.swift */,
 				AEDC732320AD9187004FE2FC /* AppDelegate.swift */,
 				AEDC732520AD9187004FE2FC /* ViewController.swift */,
 				AEDC732720AD9187004FE2FC /* Main.storyboard */,
@@ -70,6 +69,7 @@
 				AEDC732C20AD9188004FE2FC /* LaunchScreen.storyboard */,
 				AEDC732F20AD9188004FE2FC /* Info.plist */,
 				AEDC733720AD9208004FE2FC /* MD5Hash.swift */,
+				C03075A720B9797900D0DC5F /* Socket.swift */,
 				AE1A5A3420B913DF00B9ED66 /* TypeConvert.swift */,
 			);
 			path = SocketStream;

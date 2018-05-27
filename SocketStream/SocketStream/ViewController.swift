@@ -17,16 +17,15 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     @IBAction func connectAction(_ sender: Any) {
-        socket.connectToServer(host: "www.naver.com", port: 80)
+        socket.connectToServer(host: "www.phenology.info", port: 4109)
+//        socket.connectToServer(host: "www.naver.com", port: 80)
     }
     
     @IBAction func readDataAction(_ sender: Any) {
@@ -44,31 +43,26 @@ class ViewController: UIViewController {
     @IBAction func sendDataAction(_ sender: Any) {
         let PW: String = "dlwlstjd"
         //
-        let temp: String = String(bytes: toByteArray(0 as Int), encoding: String.Encoding.utf8)!
-        let opCode: String = String(bytes: toByteArray(3 as Int), encoding: String.Encoding.utf8)!
+        let temp: String = "0000"
+        let opCode: String = "3"//String(bytes: toByteArray(3 as Int), encoding: String.Encoding.utf8)!
         let ID: String = "sunge227"
-        let idSize: String = String(bytes: toByteArray(((ID.characters.count) + 1) as Int), encoding: String.Encoding.utf8)!
+        let idSize: String = "\((ID.characters.count) + 1)000"//String(bytes: toByteArray(((ID.characters.count) + 1) as Int), encoding: String.Encoding.utf8)!
         let separator: String = "\0"
         let pwMD5: String = String.toMD5(PW)()
-        let end: String = String(bytes: toByteArray(0 as Int), encoding: String.Encoding.utf8)!
-        
-        let query: String = temp + temp + temp + temp + opCode + idSize + ID + separator + pwMD5 + end
+        let end: String = "0"//String(bytes: toByteArray(0 as Int), encoding: String.Encoding.utf8)!
+        let android: [UInt8] = [3, 0, 0, 0, 9, 115, 117, 110, 103, 101, 50, 50, 55, 0, 57, 52, 53, 55, 100, 48, 55, 56, 57, 100, 57, 57, 56, 50, 54, 100, 102, 102, 51, 51, 97, 56, 56, 98, 53, 54, 48, 57, 101, 98, 0]
+        let androidString: String = fromByteArray(android, String.self)
+        print(androidString)
+        let query: String = temp + opCode + idSize + ID + separator + pwMD5 + end
         print(query)
 
         let queryData = query.data(using: String.Encoding.utf8, allowLossyConversion: true)
+        
+        let array = [UInt8](queryData!)
+        print(array)
 
         let sentCount = socket.send(data: queryData!)
         print("sendData: \(sentCount)")
-        
-//        let bufferSize = 1024
-//        let chunk = socket.receiveData(bufferSize: bufferSize)
-//        var getString: String?
-//        
-//        if chunk.count > 0 {
-//            getString = String(bytes: chunk, encoding: String.Encoding.utf8)!
-//            outputTextView?.text = getString!
-//        }
-//        print("readData: \(chunk)")
     }
     @IBAction func disconnectionAction(_ sender: Any) {
         socket.disconnect()

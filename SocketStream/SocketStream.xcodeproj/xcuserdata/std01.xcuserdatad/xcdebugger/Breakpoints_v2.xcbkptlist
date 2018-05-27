@@ -9,29 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SocketStream/Socket.swift"
-            timestampString = "549028397.407023"
+            filePath = "SocketStream/ViewController.swift"
+            timestampString = "549113542.680474"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "receiveData(bufferSize:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SocketStream/Socket.swift"
-            timestampString = "549028397.408021"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
-            landmarkName = "stream(_:handle:)"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "sendDataAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

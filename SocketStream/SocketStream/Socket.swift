@@ -23,7 +23,6 @@ class Socket: NSObject, StreamDelegate {
         self.port = port
         
 //        CFStreamCreatePairWithSocketToHost(kCFAllocatorDefault, host as CFString, UInt32(port), &readStream, &writeStream)
-        
         Stream.getStreamsToHost(withName: host, port: port, inputStream: &inputStream, outputStream: &outputStream)
         
         if inputStream != nil && outputStream != nil {
@@ -53,6 +52,7 @@ class Socket: NSObject, StreamDelegate {
     
     func send(data: Data) -> Int {
         let bytesWritten = data.withUnsafeBytes { outputStream?.write($0, maxLength: data.count) }
+        outputStream?.close()
         return bytesWritten!
     }
     
