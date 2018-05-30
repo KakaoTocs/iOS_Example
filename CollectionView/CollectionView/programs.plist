@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>Xcode</string>
+		<key>group</key>
+		<string>Apple</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Sketch</string>
+		<key>group</key>
+		<string>Etc</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Siri</string>
+		<key>group</key>
+		<string>Apple</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Melon</string>
+		<key>group</key>
+		<string>Etc</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>iTunes</string>
+		<key>group</key>
+		<string>Apple</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>IntelliJ</string>
+		<key>group</key>
+		<string>Etc</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Image</string>
+		<key>group</key>
+		<string>Apple</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>FileZilla</string>
+		<key>group</key>
+		<string>Etc</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>CCXProcess</string>
+		<key>group</key>
+		<string>Etc</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Adobe PS</string>
+		<key>group</key>
+		<string>Adobe</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Adobe AI</string>
+		<key>group</key>
+		<string>Adobe</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Adobe XD</string>
+		<key>group</key>
+		<string>Adobe</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>AppStore</string>
+		<key>group</key>
+		<string>Apple</string>
+	</dict>
+</array>
+</plist>
