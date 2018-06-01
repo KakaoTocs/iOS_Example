@@ -10,25 +10,39 @@ import Foundation
 
 class DataSource {
     
+    var programs: [Program] = []
+    var groupHardDisk: [String] = []
+    var groupMemory: [String] = []
+    
     init() {
         populateData()
     }
     
-    var programs: [Program] = []
-    var groups: [String] = []
+    // 해당 세션의 셀들 반환
+    func programsInGroup(index: Int) -> [Program] {
+        let item = groupMemory[index]
+        let filteredPrograms = programs.filter { (program: Program) -> Bool in
+            return program.group == item
+        }
+        return filteredPrograms
+    }
     
+    // 셀의 수 반환
     func numberOfRowsInEachGroup(index: Int) -> Int {
         return programsInGroup(index: index).count
     }
     
+    // 그룹의 수
     func numberOfGroups() -> Int {
-        return groups.count
+        return groupMemory.count
     }
     
+    // 헤더명 읽어오기
     func getGroupLabelAtIndex(index: Int) -> String {
-        return groups[index]
+        return groupHardDisk[index]
     }
     
+    // 데이터 읽어오기
     func populateData() {
         if let path = Bundle.main.path(forResource: "programs", ofType: "plist") {
             if let dictArray = NSArray(contentsOfFile: path) {
@@ -38,21 +52,14 @@ class DataSource {
                         let group = dict["group"] as! String
                         
                         let program = Program(name: name, group: group)
-                        if !groups.contains(group) {
-                            groups.append(group)
+                        if !groupHardDisk.contains(group) {
+                            groupHardDisk.append(group)
+                            groupMemory.append(group)
                         }
                         programs.append(program)
                     }
                 }
             }
         }
-    }
-    
-    func programsInGroup(index: Int) -> [Program] {
-        let item = groups[index]
-        let filteredPrograms = programs.filter { (program: Program) -> Bool in
-            return program.group == item
-        }
-        return filteredPrograms
     }
 }

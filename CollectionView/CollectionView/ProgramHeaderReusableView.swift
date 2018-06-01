@@ -11,4 +11,6 @@ import UIKit
 class ProgramHeaderReusableView: UICollectionReusableView {
         
     @IBOutlet weak var sectionLabel: UILabel!
+    var section: Int?
+    
 }

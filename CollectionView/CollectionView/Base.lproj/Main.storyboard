@@ -48,6 +48,7 @@
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" red="0.93206814483850375" green="0.67227044096345656" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstItem="Uyk-xI-enR" firstAttribute="leading" secondItem="OXP-Hc-gkW" secondAttribute="leading" id="4r1-bH-8ph"/>
                                             <constraint firstItem="Sym-z6-cXz" firstAttribute="leading" secondItem="OXP-Hc-gkW" secondAttribute="leading" id="5k4-zK-I1G"/>
@@ -70,17 +71,15 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bre-pS-IDF">
-                                            <rect key="frame" x="161" y="13" width="52" height="24"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bre-pS-IDF">
+                                            <rect key="frame" x="8" y="8" width="359" height="34"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstItem="Bre-pS-IDF" firstAttribute="centerX" secondItem="gFf-Sy-p8s" secondAttribute="centerX" id="MAT-CM-s8C"/>
-                                        <constraint firstItem="Bre-pS-IDF" firstAttribute="centerY" secondItem="gFf-Sy-p8s" secondAttribute="centerY" id="tQ2-tJ-tnk"/>
-                                    </constraints>
+                                    <gestureRecognizers/>
                                     <connections>
                                         <outlet property="sectionLabel" destination="Bre-pS-IDF" id="nM2-Dx-KKr"/>
                                     </connections>
