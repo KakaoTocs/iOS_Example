@@ -95,20 +95,21 @@ class Socket: NSObject, StreamDelegate {
     }
     
     func stream(_ aStream: Stream, handle eventCode: Stream.Event) {
+        let mainView = ViewController()
         if aStream === inputStream {
             switch eventCode {
             case Stream.Event.errorOccurred:
+                mainView.writeDetailInfo(info: "inputStream: ErrorOccurred\n")
                 print("inputStream: ErrorOccurred")
             case Stream.Event.openCompleted:
+                mainView.writeDetailInfo(info: "inputStream: OpenCompleted\n")
                 print("inputStream: OpenCompleted")
             case Stream.Event.hasBytesAvailable:
+                mainView.writeDetailInfo(info: "inputStream: HasBytesAvilable\n")
                 print("inputStream: HasBytesAvilable")
                 var buffer = [UInt8](repeating: 0, count: 1024)
                 let bytesRead = inputStream?.read(&buffer, maxLength: 1024)
                 var dropCount = 1024 - bytesRead!
-                
-            case Stream.Event.hasBytesAvailable:
-                print("읽을 바이트가 있음")
                 
             default:
                 break
@@ -117,13 +118,14 @@ class Socket: NSObject, StreamDelegate {
         else  if aStream === outputStream {
             switch eventCode {
             case Stream.Event.errorOccurred:
+                mainView.writeDetailInfo(info: "outputStream: ErrorOccurred\n")
                 print("outputStream: ErrorOccurred")
             case Stream.Event.openCompleted:
+                mainView.writeDetailInfo(info: "outputStream: OpenCompleted\n")
                 print("outputStream: OpenCompleted")
             case Stream.Event.hasBytesAvailable:
+                mainView.writeDetailInfo(info: "outputStream: HasBytesAvilable\n")
                 print("outputStream: HasBytesAvilable")
-            case Stream.Event.hasBytesAvailable:
-                print("읽을 바이트가 있음")
                 
             default:
                 break

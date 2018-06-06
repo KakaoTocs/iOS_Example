@@ -10,9 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var inputTextField: UITextField!
-    @IBOutlet weak var outputTextView: UITextView!
+    @IBOutlet weak var connectInfoView: UITextView!
+    @IBOutlet weak var detailInfoView: UITextView!
     
+    var temp: String = ""
     let socket = Socket()
 
     override func viewDidLoad() {
@@ -35,7 +36,7 @@ class ViewController: UIViewController {
         
         if chunk.count > 0 {
             getString = String(bytes: chunk, encoding: String.Encoding.utf8)!
-            outputTextView?.text = getString!
+            detailInfoView?.text.append(getString!)
         }
         print("readData: \(chunk)")
     }
@@ -64,8 +65,15 @@ class ViewController: UIViewController {
         let sentCount = socket.send(data: queryData!)
         print("sendData: \(sentCount)")
     }
+    
     @IBAction func disconnectionAction(_ sender: Any) {
         socket.disconnect()
+    }
+    
+    func writeDetailInfo(info: String) {
+        temp.append(info)
+         self.connectInfoView?.text = temp
+        
     }
 }
 

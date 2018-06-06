@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3BCCB02E20C5347B00CD04EE /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCCB02D20C5347B00CD04EE /* Country.swift */; };
+		3BCCB03020C5600500CD04EE /* CityTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCCB02F20C5600500CD04EE /* CityTableCell.swift */; };
 		AE5C21492091CC6E005AFDED /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5C21482091CC6E005AFDED /* MainTableViewController.swift */; };
 		AE5C214B2091CC93005AFDED /* CityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5C214A2091CC93005AFDED /* CityTableViewController.swift */; };
-		AE5C214D2091CCB1005AFDED /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5C214C2091CCB1005AFDED /* WeatherViewController.swift */; };
-		AE5C214F2091DE14005AFDED /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5C214E2091DE14005AFDED /* Country.swift */; };
+		AE5C214D2091CCB1005AFDED /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5C214C2091CCB1005AFDED /* DetailViewController.swift */; };
+		AE5C214F2091DE14005AFDED /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5C214E2091DE14005AFDED /* City.swift */; };
 		AE7A216B2090748B00D566B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7A216A2090748B00D566B5 /* AppDelegate.swift */; };
 		AE7A21702090748B00D566B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE7A216E2090748B00D566B5 /* Main.storyboard */; };
 		AE7A21722090748C00D566B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE7A21712090748C00D566B5 /* Assets.xcassets */; };
@@ -18,10 +20,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3BCCB02D20C5347B00CD04EE /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		3BCCB02F20C5600500CD04EE /* CityTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableCell.swift; sourceTree = "<group>"; };
 		AE5C21482091CC6E005AFDED /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		AE5C214A2091CC93005AFDED /* CityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewController.swift; sourceTree = "<group>"; };
-		AE5C214C2091CCB1005AFDED /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
-		AE5C214E2091DE14005AFDED /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		AE5C214C2091CCB1005AFDED /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		AE5C214E2091DE14005AFDED /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		AE7A21672090748B00D566B5 /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE7A216A2090748B00D566B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE7A216F2090748B00D566B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -41,6 +45,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B52AD5120C69335009198C2 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AE5C21482091CC6E005AFDED /* MainTableViewController.swift */,
+				AE5C214A2091CC93005AFDED /* CityTableViewController.swift */,
+				AE5C214C2091CCB1005AFDED /* DetailViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		3B52AD5220C69366009198C2 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				3BCCB02F20C5600500CD04EE /* CityTableCell.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		3B52AD5320C6939A009198C2 /* DataType */ = {
+			isa = PBXGroup;
+			children = (
+				3BCCB02D20C5347B00CD04EE /* Country.swift */,
+				AE5C214E2091DE14005AFDED /* City.swift */,
+			);
+			path = DataType;
+			sourceTree = "<group>";
+		};
 		AE7A215E2090748B00D566B5 = {
 			isa = PBXGroup;
 			children = (
@@ -60,11 +91,10 @@
 		AE7A21692090748B00D566B5 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				3B52AD5120C69335009198C2 /* ViewController */,
+				3B52AD5220C69366009198C2 /* TableViewCell */,
+				3B52AD5320C6939A009198C2 /* DataType */,
 				AE7A216A2090748B00D566B5 /* AppDelegate.swift */,
-				AE5C21482091CC6E005AFDED /* MainTableViewController.swift */,
-				AE5C214A2091CC93005AFDED /* CityTableViewController.swift */,
-				AE5C214C2091CCB1005AFDED /* WeatherViewController.swift */,
-				AE5C214E2091DE14005AFDED /* Country.swift */,
 				AE7A216E2090748B00D566B5 /* Main.storyboard */,
 				AE7A21712090748C00D566B5 /* Assets.xcassets */,
 				AE7A21732090748C00D566B5 /* LaunchScreen.storyboard */,
@@ -144,10 +174,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BCCB03020C5600500CD04EE /* CityTableCell.swift in Sources */,
 				AE5C214B2091CC93005AFDED /* CityTableViewController.swift in Sources */,
-				AE5C214D2091CCB1005AFDED /* WeatherViewController.swift in Sources */,
+				AE5C214D2091CCB1005AFDED /* DetailViewController.swift in Sources */,
 				AE5C21492091CC6E005AFDED /* MainTableViewController.swift in Sources */,
-				AE5C214F2091DE14005AFDED /* Country.swift in Sources */,
+				AE5C214F2091DE14005AFDED /* City.swift in Sources */,
+				3BCCB02E20C5347B00CD04EE /* Country.swift in Sources */,
 				AE7A216B2090748B00D566B5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

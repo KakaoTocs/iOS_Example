@@ -46,49 +46,54 @@
                                 <constraints>
                                     <constraint firstItem="fKY-FZ-Sop" firstAttribute="width" secondItem="Ash-lZ-2gS" secondAttribute="width" id="MdY-NK-LmD"/>
                                     <constraint firstItem="qZo-vW-Ta2" firstAttribute="width" secondItem="Ash-lZ-2gS" secondAttribute="width" id="a5o-bD-KxH"/>
+                                    <constraint firstAttribute="height" constant="30" id="zeA-hq-y9v"/>
                                 </constraints>
                             </stackView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Socket Info" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eVS-3Y-wdb">
-                                <rect key="frame" x="20" y="90" width="335" height="467"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Detail Info" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eVS-3Y-wdb">
+                                <rect key="frame" x="20" y="308.5" width="335" height="248.5"/>
                                 <color key="backgroundColor" red="0.82298503587575067" green="0.92952887055837563" blue="0.85327539473698644" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yWz-nc-egm">
-                                <rect key="frame" x="20" y="40" width="335" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uzu-nk-XkV">
                                 <rect key="frame" x="20" y="627" width="335" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="pA6-mo-6m6"/>
+                                </constraints>
                                 <state key="normal" title="Disconnection"/>
                                 <connections>
                                     <action selector="disconnectionAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="csn-94-9hm"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Connection Info" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="R3w-ow-Yjo">
+                                <rect key="frame" x="20" y="40" width="335" height="248.5"/>
+                                <color key="backgroundColor" red="1" green="0.93436771337833935" blue="0.66473567156430247" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="eVS-3Y-wdb" firstAttribute="top" secondItem="yWz-nc-egm" secondAttribute="bottom" constant="20" id="DPb-4x-WZw"/>
                             <constraint firstItem="s9l-vu-hOW" firstAttribute="top" secondItem="eVS-3Y-wdb" secondAttribute="bottom" constant="20" id="O0X-jN-SmZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eVS-3Y-wdb" secondAttribute="trailing" constant="20" id="Osf-AI-8PS"/>
-                            <constraint firstItem="yWz-nc-egm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Qfl-9y-BmL"/>
+                            <constraint firstItem="eVS-3Y-wdb" firstAttribute="height" secondItem="R3w-ow-Yjo" secondAttribute="height" id="Pw4-zy-tjn"/>
                             <constraint firstItem="Uzu-nk-XkV" firstAttribute="top" secondItem="s9l-vu-hOW" secondAttribute="bottom" constant="20" id="WsN-7U-jpE"/>
                             <constraint firstItem="Uzu-nk-XkV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="XFD-DB-fWK"/>
                             <constraint firstItem="s9l-vu-hOW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ytk-Pe-yPq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Uzu-nk-XkV" secondAttribute="trailing" constant="20" id="agN-jj-dvr"/>
-                            <constraint firstItem="yWz-nc-egm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="bpA-M1-lB4"/>
+                            <constraint firstItem="R3w-ow-Yjo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="d01-VS-3Do"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Uzu-nk-XkV" secondAttribute="bottom" constant="10" id="du4-Xp-3ut"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="s9l-vu-hOW" secondAttribute="trailing" id="fob-k4-aYp"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yWz-nc-egm" secondAttribute="trailing" constant="20" id="rB1-8v-CTY"/>
+                            <constraint firstItem="R3w-ow-Yjo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="nRe-a8-qdf"/>
+                            <constraint firstItem="eVS-3Y-wdb" firstAttribute="top" secondItem="R3w-ow-Yjo" secondAttribute="bottom" constant="20" id="qyK-8q-wz2"/>
                             <constraint firstItem="eVS-3Y-wdb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="utf-wi-GPI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="R3w-ow-Yjo" secondAttribute="trailing" constant="20" id="w7U-vu-lZp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="inputTextField" destination="yWz-nc-egm" id="Dyq-76-Hkd"/>
-                        <outlet property="outputTextView" destination="eVS-3Y-wdb" id="lgA-gK-t0J"/>
+                        <outlet property="connectInfoView" destination="R3w-ow-Yjo" id="Rcz-U0-kHZ"/>
+                        <outlet property="detailInfoView" destination="eVS-3Y-wdb" id="AM2-gX-CKb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
