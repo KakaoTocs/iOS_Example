@@ -32,6 +32,28 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         self.capturePhotoOutput?.capturePhoto(with: photoSettings, delegate: self)
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let screenSize = previewLayer?.bounds.size
+        if let touchPoint = touches.first {
+            let x = touchPoint.location(in: preView).y / (screenSize?.height)!
+            let y = 1.0 - touchPoint.location(in: preView).x / (screenSize?.width)!
+            let focusPoint = CGPoint(x: x, y: y)
+            print("초점: \(focusPoint)")
+            if let device = captureDevice {
+                do {
+                    try device.lockForConfiguration()
+                    
+                    device.focusMode = .autoFocus
+                    device.exposurePointOfInterest = focusPoint
+                    device.exposureMode = AVCaptureDevice.ExposureMode.continuousAutoExposure
+                    device.unlockForConfiguration()
+                } catch {
+                    print("포커스 에러")
+                }
+            }
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,6 +61,9 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         self.captureSession?.sessionPreset = .photo
         self.capturePhotoOutput = AVCapturePhotoOutput()
         self.captureDevice = AVCaptureDevice.default(for: .video)
+//        self.captureDevice?.focusMode = .autoFocus
+//        self.captureDevice?.lockForConfiguration(nil)
+//        self.captureDevice?.focusPointOfInterest =
         let input = try! AVCaptureDeviceInput(device: self.captureDevice!)
         self.captureSession?.addInput(input)
         self.captureSession?.addOutput(self.capturePhotoOutput!)
