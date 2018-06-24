@@ -32,7 +32,28 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         self.capturePhotoOutput?.capturePhoto(with: photoSettings, delegate: self)
     }
     
+    func focusTo(value : Float) {
+        if let device = captureDevice {
+            do {
+                try device.lockForConfiguration()
+                device.setFocusModeLocked(lensPosition: value, completionHandler: { (time) -> Void in
+                    //
+                })
+                device.unlockForConfiguration()
+            } catch {
+                print("focus Error!")
+            }
+        }
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        let screenWidth = previewLayer?.bounds.size.width
+//        let touch: UITouch = touches.first!
+//        let touchPercent = touch.location(in: self.view).x / screenWidth!
+//        print(touchPercent)
+//        focusTo(value: Float(1 - touchPercent))
+        
+        
         let screenSize = previewLayer?.bounds.size
         if let touchPoint = touches.first {
             let x = touchPoint.location(in: preView).y / (screenSize?.height)!
@@ -42,8 +63,8 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
             if let device = captureDevice {
                 do {
                     try device.lockForConfiguration()
-                    
-                    device.focusMode = .autoFocus
+                    device.focusPointOfInterest = focusPoint
+                    device.focusMode = .continuousAutoFocus
                     device.exposurePointOfInterest = focusPoint
                     device.exposureMode = AVCaptureDevice.ExposureMode.continuousAutoExposure
                     device.unlockForConfiguration()

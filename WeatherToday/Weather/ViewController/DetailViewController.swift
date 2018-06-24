@@ -17,7 +17,8 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var rainFallLabel: UILabel!
     
     // MARK: - Property
-    var city: City?
+//    var city: City?
+    var city: CityJSON?
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -25,14 +26,14 @@ class DetailViewController: UIViewController {
         
         if let cityData = city {
             // 도시명
-            self.title = cityData.name
+            self.title = cityData.cityName!
             // 날씨 이름
             weatherNameLable.text = cityData.weatherName
             // 온도
             temperatureLabel.text = "섭씨 \(cityData.celsius)도 / 화씨 \(cityData.fahrenheit)도"
             temperatureLabel.textColor = cityData.temperatureColor
             // 강수확률
-            rainFallLabel.text = "강수확률 \(cityData.rainfall)%"
+            rainFallLabel.text = "강수확률 \(cityData.rainfallProbability)%"
             rainFallLabel.textColor = cityData.rainFallColor
             // 날씨 아이콘
             if let weather = cityData.weatherIcon {

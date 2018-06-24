@@ -11,7 +11,8 @@ import UIKit
 class CityTableViewController: UITableViewController {
     
     // MARK: - Property
-    var country: Country?
+//    var country: Country?
+    var cities: [CityJSON]?
 
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -19,10 +20,6 @@ class CityTableViewController: UITableViewController {
 
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        // 네비게이션바 제목 설정
-        self.title = country?.name
-        // 네비게이션바 백버튼 색깔 설정
-        self.navigationController?.navigationBar.tintColor = UIColor.white
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,11 +32,14 @@ class CityTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let count = country?.cities.count {
+        return cities?.count ?? 0
+        /*
+        if let count = {
             return count
         } else {
             return 0
         }
+         */
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -47,14 +47,14 @@ class CityTableViewController: UITableViewController {
             return UITableViewCell()
         }
 
-        if let city = country?.cities[indexPath.row] {
+        if let city = cities?[indexPath.row] {
             // 도시 이름
-            cell.cityNameLabel.text = city.name
+            cell.cityNameLabel.text = city.cityName
             // 온도
             cell.temperatureLabel.text = "섭씨 \(city.celsius)도 / 화씨 \(city.fahrenheit)도"
             cell.temperatureLabel.textColor = city.temperatureColor
             // 강수확률
-            cell.rainFallLabel.text = "강수확률 \(city.rainfall)%"
+            cell.rainFallLabel.text = "강수확률 \(city.rainfallProbability)%"
             cell.rainFallLabel.textColor = city.rainFallColor
             // 날씨 아이콘
             if let weather = city.weatherIcon {
@@ -70,7 +70,7 @@ class CityTableViewController: UITableViewController {
         if segue.identifier == "weatherDetailSegue" {
             if let detailViewController = segue.destination as? DetailViewController,
                 let selectedPath = tableView.indexPathForSelectedRow {
-                detailViewController.city = self.country?.cities[selectedPath.row]
+                detailViewController.city = self.cities?[selectedPath.row]
             }
         }
     }

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+/*
 class City {
     let name: String
     let state: Int
@@ -79,10 +79,79 @@ class City {
         self.celsius = celsius
     }
 }
-
+*/
 struct CityJSON: Codable {
-    let city_name: String
-    let state: Int
-    let celsius: Double
-    let rainfall_probability: Int
+    let cityName: String?
+    let state: Int?
+    let celsius: Double?
+    let rainfallProbability: Int?
+    var weatherIcon: String? {
+        get {
+            switch self.state {
+            case 10:
+                return "sunny"
+            case 11:
+                return "cloudy"
+            case 12:
+                return "rainy"
+            case 13:
+                return "snowy"
+            default:
+                return nil
+            }
+        }
+    }
+    var fahrenheit: Double? {
+        get {
+            if let celsius = self.celsius {
+                return ((32 + 1.8 * celsius) * 10).rounded() / 10
+            } else {
+                return nil
+            }
+        }
+    }
+    var weatherName: String {
+        get {
+            switch self.state {
+            case 10:
+                return "맑음"
+            case 11:
+                return "구름"
+            case 12:
+                return "비"
+            case 13:
+                return "눈"
+            default:
+                return "날씨 정보 없음"
+            }
+        }
+    }
+    var temperatureColor: UIColor {
+        get {
+            if self.celsius! <= 10.0 {
+                return UIColor.blue
+            } else if self.celsius! >= 25.0 {
+                return UIColor.red
+            } else {
+                return UIColor.black
+            }
+        }
+    }
+    var rainFallColor: UIColor {
+        get {
+            if self.rainfallProbability! >= 60 {
+                return UIColor.orange
+            } else {
+                // 셀 재사용 -> 필수
+                return UIColor.black
+            }
+        }
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case cityName = "city_name"
+        case state
+        case celsius
+        case rainfallProbability = "rainfall_probability"
+    }
 }
