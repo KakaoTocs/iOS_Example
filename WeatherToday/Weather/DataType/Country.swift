@@ -7,30 +7,13 @@
 //
 
 import Foundation
-/*
-class Country {
-//    국가명
-    let name: String
-//    도시 정보
-    var cities: [City] = []
-//
-    let assetName: String
-//    국기 이미지명
-    var flagName: String {
-        get {
-            return "flag_\(self.assetName)"
-        }
-    }
-    
-    init(countryName: String, assetName: String) {
-        self.name = countryName
-        self.assetName = assetName
-    }
-}
-*/
-struct CountryJSON: Codable {
+
+struct Country: Codable {
+    // 국가명
     let koreanName: String?
+    // 국가의 도시 에셋 파일명
     let assetName: String?
+    // 국기 파일 이름
     var flagName: String? {
         get {
             if let countryAssetName = self.assetName {
@@ -40,7 +23,7 @@ struct CountryJSON: Codable {
             }
         }
     }
-    // 옵셔널 바인딩 철저히!!
+    
     enum CodingKeys: String, CodingKey {
         case koreanName = "korean_name"
         case assetName = "asset_name"

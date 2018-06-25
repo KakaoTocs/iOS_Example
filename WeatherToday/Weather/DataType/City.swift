@@ -7,100 +7,17 @@
 //
 
 import UIKit
-/*
-class City {
-    let name: String
-    let state: Int
-    let rainfall: Int
-    let celsius: Double
-    var weatherIcon: String? {
-        get {
-            switch self.state {
-            case 10:
-                return "sunny"
-            case 11:
-                return "cloudy"
-            case 12:
-                return "rainy"
-            case 13:
-                return "snowy"
-            default:
-                return nil
-            }
-        }
-    }
-    var fahrenheit: Double {
-        get {
-            return ((32 + 1.8 * self.celsius) * 10).rounded() / 10
-        }
-    }
-    var weatherName: String {
-        get {
-            switch self.state {
-            case 10:
-                return "맑음"
-            case 11:
-                return "구름"
-            case 12:
-                return "비"
-            case 13:
-                return "눈"
-            default:
-                return "날씨 정보 없음"
-            }
-        }
-    }
-    var temperatureColor: UIColor {
-        get {
-            if self.celsius <= 10.0 {
-                return UIColor.blue
-            } else if self.celsius >= 25.0 {
-                return UIColor.red
-            } else {
-                return UIColor.black
-            }
-        }
-    }
-    var rainFallColor: UIColor {
-        get {
-            if self.rainfall >= 60 {
-                return UIColor.orange
-            } else {
-                // 셀 재사용 -> 필수
-                return UIColor.black
-            }
-        }
-    }
-    
-    init(name: String, state: Int, rainfall: Int, celsius: Double) {
-        self.name = name
-        self.state = state
-        self.rainfall = rainfall
-        self.celsius = celsius
-    }
-}
-*/
-struct CityJSON: Codable {
+
+struct City: Codable {
+    // 도시명
     let cityName: String?
+    // 날씨
     let state: Int?
-    let celsius: Double?
+    // 강수량
     let rainfallProbability: Int?
-    var weatherIcon: String? {
-        get {
-            switch self.state {
-            case 10:
-                return "sunny"
-            case 11:
-                return "cloudy"
-            case 12:
-                return "rainy"
-            case 13:
-                return "snowy"
-            default:
-                return nil
-            }
-        }
-    }
+    // 섭씨
+    let celsius: Double?
+    // 화씨
     var fahrenheit: Double? {
         get {
             if let celsius = self.celsius {
@@ -110,6 +27,24 @@ struct CityJSON: Codable {
             }
         }
     }
+    // 날씨 아이콘명
+    var weatherIcon: String? {
+        get {
+            switch self.state {
+            case 10:
+                return "sunny"
+            case 11:
+                return "cloudy"
+            case 12:
+                return "rainy"
+            case 13:
+                return "snowy"
+            default:
+                return nil
+            }
+        }
+    }
+    // 날씨명
     var weatherName: String {
         get {
             switch self.state {
@@ -126,6 +61,7 @@ struct CityJSON: Codable {
             }
         }
     }
+    // 온도 색상
     var temperatureColor: UIColor {
         get {
             if self.celsius! <= 10.0 {
@@ -137,6 +73,7 @@ struct CityJSON: Codable {
             }
         }
     }
+    // 강수량 색상
     var rainFallColor: UIColor {
         get {
             if self.rainfallProbability! >= 60 {

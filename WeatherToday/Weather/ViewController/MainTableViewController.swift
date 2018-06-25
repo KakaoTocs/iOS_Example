@@ -11,11 +11,8 @@ import UIKit
 class MainTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     // MARK: - Property
-//    var countries: [Country] = []
-    
-    // Test
-    var Tcontries: [CountryJSON] = []
-    var Tcity: [String : [CityJSON]] = [:]
+    var countries: [Country] = []
+    var cities: [String : [City]] = [:]
     
     // MARK: - IBOutlet
     @IBOutlet weak var tableView: UITableView!
@@ -31,13 +28,7 @@ class MainTableViewController: UIViewController, UITableViewDelegate, UITableVie
         // 네비게이션바 타이틀 색깔 설정
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white] as [NSAttributedStringKey : Any]
         
-        // JSON데이터 읽기
-//        if let data = parseJSONData() {
-//            self.countries = data
-//        }
         parseJSONData()
-        dump(Tcontries)
-        dump(Tcity)
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,16 +41,18 @@ class MainTableViewController: UIViewController, UITableViewDelegate, UITableVie
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.Tcontries.count
+        return self.countries.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "countryCell", for: indexPath)
-        let country: CountryJSON = self.Tcontries[indexPath.row]
+        let country: Country = self.countries[indexPath.row]
         
-        cell.textLabel?.text = country.koreanName
-        cell.imageView?.image = UIImage(named: country.flagName!)
-        cell.imageView?.contentMode = UIViewContentMode.scaleAspectFit
+        if let countryName = country.koreanName, let flagImageName = country.flagName {
+            cell.textLabel?.text = countryName
+            cell.imageView?.image = UIImage(named: flagImageName)
+            cell.imageView?.contentMode = UIViewContentMode.scaleAspectFit
+        }
         cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
 
         return cell
@@ -73,9 +66,14 @@ class MainTableViewController: UIViewController, UITableViewDelegate, UITableVie
         if segue.identifier == "citySegue" {
             if let cityViewController = segue.destination as? CityTableViewController,
                 let selectedPath = tableView.indexPathForSelectedRow {
-                cityViewController.cities  = self.Tcity[(self.Tcontries[selectedPath.row].koreanName)!]
-                // 네비게이션바 제목 설정
-                cityViewController.title = Tcontries[selectedPath.row].koreanName!
+                if let countryName = self.countries[selectedPath.row].koreanName {
+                    // 선택된 국가의 도시 정보 전달
+                    if let cities = self.cities[countryName] {
+                        cityViewController.cities  = cities
+                    }
+                    // 네비게이션바 제목 설정
+                    cityViewController.title = countryName
+                }
                 // 네비게이션바 백버튼 색깔 설정
                 cityViewController.navigationController?.navigationBar.tintColor = UIColor.white
             }
@@ -86,7 +84,6 @@ class MainTableViewController: UIViewController, UITableViewDelegate, UITableVie
     // JSON데이터 읽기
     func parseJSONData() {
         // 나라 정보 읽기
-//        var tempCountiesData: [Country] = []
         let jsonDecoder: JSONDecoder = JSONDecoder()
         
         guard let dataAsset: NSDataAsset = NSDataAsset(name: "countries") else {
@@ -94,41 +91,30 @@ class MainTableViewController: UIViewController, UITableViewDelegate, UITableVie
         }
         
         do {
-            let countriesData: [CountryJSON] = try jsonDecoder.decode([CountryJSON].self, from: dataAsset.data)
-            Tcontries = countriesData
-            // 배열에 나라 추가
-            dump(countriesData)
-//            for countryData in countriesData {
-//                tempCountiesData.append(Country(countryName: countryData.koreanName!, assetName: countryData.assetName!))
-//            }
+            let countriesData: [Country] = try jsonDecoder.decode([Country].self, from: dataAsset.data)
+            countries = countriesData
         } catch {
             print(error.localizedDescription)
         }
         
-        // 각 나라에 도시 정보 추가
-        for counter in 0..<Tcontries.count {
-            guard let dataAsset: NSDataAsset = NSDataAsset(name: Tcontries[counter].assetName!) else {
-                return
+        // 각 나라의 도시 정보 읽기
+        for counter in 0..<countries.count {
+            guard let countryAssetName = countries[counter].assetName else {
+                continue
+            }
+            guard let dataAsset: NSDataAsset = NSDataAsset(name: countryAssetName) else {
+                continue
             }
             
             do {
-                let citiesData: [CityJSON] = try jsonDecoder.decode([CityJSON].self, from: dataAsset.data)
-                Tcity[Tcontries[counter].koreanName!] = citiesData
-                // 도시 배열에 도시 추가
-                dump(citiesData)
-//                print(citiesData[0].fahrenheit)
-//                print(citiesData[0].weatherIcon)
-//                print(citiesData[0].weatherName)
-//                print(citiesData[0].temperatureColor)
-//                print(citiesData[0].rainFallColor)
-//                for cityData in citiesData {
-//                    tempCountiesData[counter].cities.append(City(name: cityData.cityName!, state: cityData.state!, rainfall: cityData.rainfallProbability!, celsius: cityData.celsius!))
-//                }
+                let citiesData: [City] = try jsonDecoder.decode([City].self, from: dataAsset.data)
+                if let countryName = countries[counter].koreanName {
+                    // 도시 정보 추가
+                    cities[countryName] = citiesData
+                }
             } catch {
                 print(error.localizedDescription)
             }
         }
-        
-//        return tempCountiesData
     }
 }
