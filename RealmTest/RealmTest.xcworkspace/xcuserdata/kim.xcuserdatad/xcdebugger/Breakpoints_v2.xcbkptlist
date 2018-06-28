@@ -2,4 +2,115 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RealmTest/AlbumTableViewController.swift"
+            timestampString = "551858626.867087"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "prepare(for:sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RealmTest/PhotoCollectionViewController.swift"
+            timestampString = "551858626.867205"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "PhotoCollectionViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RealmTest.PhotoCollectionViewController.selectedAlbum.getter : Swift.ImplicitlyUnwrappedOptional&lt;RealmTest.Album&gt;"
+                  moduleName = "RealmTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kim/Desktop/RealmTest%202/RealmTest/PhotoCollectionViewController.swift"
+                  timestampString = "551858114.145454"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "109">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RealmTest.PhotoCollectionViewController.selectedAlbum.setter : Swift.ImplicitlyUnwrappedOptional&lt;RealmTest.Album&gt;"
+                  moduleName = "RealmTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kim/Desktop/RealmTest%202/RealmTest/PhotoCollectionViewController.swift"
+                  timestampString = "551858114.14841"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "112">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RealmTest.PhotoCollectionViewController.init(collectionViewLayout: __ObjC.UICollectionViewLayout) -&gt; RealmTest.PhotoCollectionViewController"
+                  moduleName = "RealmTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kim/Desktop/RealmTest%202/RealmTest/PhotoCollectionViewController.swift"
+                  timestampString = "551858114.151463"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "39">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RealmTest.PhotoCollectionViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; RealmTest.PhotoCollectionViewController"
+                  moduleName = "RealmTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kim/Desktop/RealmTest%202/RealmTest/PhotoCollectionViewController.swift"
+                  timestampString = "551858114.154615"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "85">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RealmTest.PhotoCollectionViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;RealmTest.PhotoCollectionViewController&gt;"
+                  moduleName = "RealmTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kim/Desktop/RealmTest%202/RealmTest/PhotoCollectionViewController.swift"
+                  timestampString = "551858114.157732"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "55">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
