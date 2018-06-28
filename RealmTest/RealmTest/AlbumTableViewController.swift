@@ -60,9 +60,9 @@ class AlbumTableViewController: UITableViewController, UISearchBarDelegate {
         return cell
     }
     
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        self.performSegue(withIdentifier: "Photos", sender: albums[indexPath.row])
-//    }
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60.0
+    }
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let deleteAction = UITableViewRowAction(style: .default, title: "Delete") { (deleteAction, indexPath) in
@@ -90,10 +90,6 @@ class AlbumTableViewController: UITableViewController, UISearchBarDelegate {
                 photoCollectionVew.selectedAlbum = albums[selectedPath.row]
             }
         }
-//        let photoCollectionView = segue.destination as! PhotoCollectionViewController
-//        print("Hello")
-//        photoCollectionView.selectedAlbum = sender as! Album
-//        print("Hello")
     }
     
     @IBAction func addNewAlbum(_ sender: UIBarButtonItem) {
@@ -140,7 +136,8 @@ class AlbumTableViewController: UITableViewController, UISearchBarDelegate {
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        albums = realm.objects(Album.self).filter("title contains[c] %@", searchText).sorted(byKeyPath: "createDate", ascending: false)
+        print(searchText)
+        albums = realm.objects(Album.self).filter("title contains[c]", searchText).sorted(byKeyPath: "createDate", ascending: false)
         self.tableView.reloadData()
     }
     

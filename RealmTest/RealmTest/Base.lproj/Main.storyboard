@@ -54,7 +54,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k3Q-BO-Lz5">
-                                            <rect key="frame" x="79" y="22" width="270" height="25"/>
+                                            <rect key="frame" x="99" y="22" width="250" height="25"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="25" id="aWT-7v-OTy"/>
                                             </constraints>
@@ -73,9 +73,8 @@
                                         <constraint firstItem="k3Q-BO-Lz5" firstAttribute="centerY" secondItem="s0t-Kx-U8d" secondAttribute="centerY" id="Ekb-tU-bC9"/>
                                         <constraint firstItem="LLF-Sh-Gby" firstAttribute="height" secondItem="s0t-Kx-U8d" secondAttribute="height" id="HAN-XX-Lun"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="k3Q-BO-Lz5" secondAttribute="trailing" constant="10" id="N9f-T5-mUG"/>
-                                        <constraint firstItem="k3Q-BO-Lz5" firstAttribute="leading" secondItem="LLF-Sh-Gby" secondAttribute="trailing" constant="10" id="QnU-6m-jLj"/>
+                                        <constraint firstItem="k3Q-BO-Lz5" firstAttribute="leading" secondItem="LLF-Sh-Gby" secondAttribute="trailing" constant="30" id="QnU-6m-jLj"/>
                                         <constraint firstItem="LLF-Sh-Gby" firstAttribute="leading" secondItem="s0t-Kx-U8d" secondAttribute="leading" id="VeB-Do-FPr"/>
-                                        <constraint firstItem="k3Q-BO-Lz5" firstAttribute="leading" secondItem="LLF-Sh-Gby" secondAttribute="trailing" constant="10" id="k9J-8i-Dwl"/>
                                         <constraint firstItem="LLF-Sh-Gby" firstAttribute="centerY" secondItem="s0t-Kx-U8d" secondAttribute="centerY" id="yv2-Dt-fbL"/>
                                     </constraints>
                                 </tableViewCellContentView>
