@@ -1,0 +1,6 @@
+framework module Pods_RealmBasic {
+  umbrella header "Pods-RealmBasic-umbrella.h"
+
+  export *
+  module * { export * }
+}
