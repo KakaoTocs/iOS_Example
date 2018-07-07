@@ -7,34 +7,49 @@
 //
 
 import UIKit
-import Realm
 import RealmSwift
 
-class ViewController: UIViewController {
+class ViewController: UITableViewController {
+    
+    var realm: Realm!
+    var dogs: Results<Dog>!
+    var token: NotificationToken!
 
-    @IBOutlet weak var inputUserName: UITextField!
-    @IBOutlet weak var inputUserAge: UITextField!
-    @IBOutlet weak var inputUserEmail: UITextField!
+    @IBOutlet weak var dogNameTextField: UITextField!
+    @IBOutlet weak var dogAgeTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        do {
+            realm = try! Realm()
+        } catch {
+            print("\(error)")
+        }
+        
+        dogs = realm.objects(Dog.self).sorted(byKeyPath: "createData", ascending: false)
+        
+            
+//        albums = realm.objects(Album.self).sorted(byKeyPath: "createDate", ascending: false)
+//        
+//        token = albums.observe({ (change) in
+//            self.tableView.reloadData()
+//        })
         
         let myDog = Dog()
         myDog.name = "Rex"
         myDog.age = 1
         print("Dog name: \(myDog.name)")
         
-        let realm = try! Realm()
-        
         let puppies = realm.objects(Dog.self).filter("age < 2")
         print(puppies.count)
-        
+
         try! realm.write {
             realm.add(myDog)
         }
-        
+
         print(puppies.count)
-        
+
         DispatchQueue(label: "background").async {
             autoreleasepool {
                 let realm = try! Realm()
@@ -45,5 +60,13 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func addDataAction(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func deleteDataAction(_ sender: UIButton) {
+    }
+    
 }
 
