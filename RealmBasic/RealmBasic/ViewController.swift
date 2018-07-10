@@ -13,10 +13,12 @@ class ViewController: UITableViewController {
     
     var realm: Realm!
     var dogs: Results<Dog>!
-    var token: NotificationToken!
+//    var token: NotificationToken!
 
     @IBOutlet weak var dogNameTextField: UITextField!
     @IBOutlet weak var dogAgeTextField: UITextField!
+    
+//    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,13 +31,11 @@ class ViewController: UITableViewController {
         
         dogs = realm.objects(Dog.self).sorted(byKeyPath: "createData", ascending: false)
         
-            
-//        albums = realm.objects(Album.self).sorted(byKeyPath: "createDate", ascending: false)
-//        
-//        token = albums.observe({ (change) in
+//        token = dogs?.observe({ (change) in
 //            self.tableView.reloadData()
 //        })
         
+        /*
         let myDog = Dog()
         myDog.name = "Rex"
         myDog.age = 1
@@ -59,13 +59,49 @@ class ViewController: UITableViewController {
                 }
             }
         }
+        */
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return dogs.count
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! UITableViewCell
+        
+        if let dog: Dog = dogs[indexPath.row] {
+            cell.textLabel?.text = dog.name
+        }
+        
+        return cell
     }
     
     @IBAction func addDataAction(_ sender: UIButton) {
-        
+        if let name = dogNameTextField.text, let stringAge = dogAgeTextField.text, let age = Int(stringAge) {
+            do {
+                let newDog = Dog()
+                newDog.name = name
+                newDog.age = age
+                try self.realm.write {
+                    self.realm.add(newDog)
+                }
+            } catch {
+                print("\(error)")
+            }
+        } else {
+            print("Name read error!")
+        }
     }
     
     @IBAction func deleteDataAction(_ sender: UIButton) {
+        if let name = dogNameTextField.text {
+            print("Hello")
+        }
     }
     
 }
