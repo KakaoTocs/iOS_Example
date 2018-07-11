@@ -2,23 +2,23 @@
 //  ViewController.swift
 //  RealmBasic
 //
-//  Created by user on 06/07/2018.
+//  Created by user on 11/07/2018.
 //  Copyright © 2018 KakaoTocs. All rights reserved.
 //
 
 import UIKit
 import RealmSwift
 
-class ViewController: UITableViewController {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var realm: Realm!
     var dogs: Results<Dog>!
-//    var token: NotificationToken!
-
-    @IBOutlet weak var dogNameTextField: UITextField!
-    @IBOutlet weak var dogAgeTextField: UITextField!
     
-//    @IBOutlet weak var tableView: UITableView!
+    var token: NotificationToken!
+
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var ageTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,80 +29,56 @@ class ViewController: UITableViewController {
             print("\(error)")
         }
         
-        dogs = realm.objects(Dog.self).sorted(byKeyPath: "createData", ascending: false)
+        dogs = realm.objects(Dog.self).sorted(byKeyPath: "name", ascending: false)
         
-//        token = dogs?.observe({ (change) in
-//            self.tableView.reloadData()
-//        })
-        
-        /*
-        let myDog = Dog()
-        myDog.name = "Rex"
-        myDog.age = 1
-        print("Dog name: \(myDog.name)")
-        
-        let puppies = realm.objects(Dog.self).filter("age < 2")
-        print(puppies.count)
-
-        try! realm.write {
-            realm.add(myDog)
-        }
-
-        print(puppies.count)
-
-        DispatchQueue(label: "background").async {
-            autoreleasepool {
-                let realm = try! Realm()
-                let theDog = realm.objects(Dog.self).filter("age == 1").first
-                try! realm.write {
-                    theDog!.age = 3
-                }
-            }
-        }
-        */
+        token = dogs.observe({ (change) in
+            print("change: \(change)")
+            self.tableView.reloadData()
+        })
     }
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
+
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return dogs.count
-        return 1
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dogs.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! UITableViewCell
         
         if let dog: Dog = dogs[indexPath.row] {
             cell.textLabel?.text = dog.name
+            cell.detailTextLabel?.text = String(dog.age)
         }
         
         return cell
     }
-    
-    @IBAction func addDataAction(_ sender: UIButton) {
-        if let name = dogNameTextField.text, let stringAge = dogAgeTextField.text, let age = Int(stringAge) {
+
+    /// 오류타입 열거형
+    ///
+    /// - Parameter sender: <#sender description#>
+    @IBAction func dogAddButton(_ sender: UIButton) {
+        if let name = nameTextField.text, let stringAge = ageTextField.text, let age = Int(stringAge) {
             do {
                 let newDog = Dog()
                 newDog.name = name
                 newDog.age = age
+                
                 try self.realm.write {
                     self.realm.add(newDog)
                 }
             } catch {
-                print("\(error)")
+                print("Name read error!")
             }
-        } else {
-            print("Name read error!")
         }
     }
     
-    @IBAction func deleteDataAction(_ sender: UIButton) {
-        if let name = dogNameTextField.text {
+    @IBAction func dogDeleteButton(_ sender: UIButton) {
+        if let name = nameTextField.text {
             print("Hello")
         }
     }
-    
 }
 
