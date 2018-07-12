@@ -23,6 +23,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
+        
         do {
             realm = try! Realm()
         } catch {
@@ -30,9 +33,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         
         dogs = realm.objects(Dog.self).sorted(byKeyPath: "name", ascending: false)
-        
+        print(dogs.count)
         token = dogs.observe({ (change) in
-            print("change: \(change)")
             self.tableView.reloadData()
         })
     }
@@ -49,22 +51,32 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! UITableViewCell
         
         if let dog: Dog = dogs[indexPath.row] {
+            print(dogs)
             cell.textLabel?.text = dog.name
             cell.detailTextLabel?.text = String(dog.age)
         }
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let deleteAction = UITableViewRowAction(style: .default, title: "Delete") { (deleteAction, indexPath) in
+            do {
+                try self.realm.write {
+                    self.realm.delete(self.dogs[indexPath.row])
+                }
+            } catch {
+                print("\(error)")
+            }
+        }
+        
+        return [deleteAction]
+    }
 
-    /// 오류타입 열거형
-    ///
-    /// - Parameter sender: <#sender description#>
     @IBAction func dogAddButton(_ sender: UIButton) {
         if let name = nameTextField.text, let stringAge = ageTextField.text, let age = Int(stringAge) {
             do {
-                let newDog = Dog()
-                newDog.name = name
-                newDog.age = age
+                let newDog = Dog(name: name, age: age)
                 
                 try self.realm.write {
                     self.realm.add(newDog)
@@ -76,8 +88,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     @IBAction func dogDeleteButton(_ sender: UIButton) {
-        if let name = nameTextField.text {
-            print("Hello")
+        if let name = nameTextField.text, let stringAge = ageTextField.text, let age = Int(stringAge) {
+            let targetDog = Dog(name: name, age: age)
+            let index = dogs.index(of: targetDog)
+            do {
+                try self.realm.write {
+                    self.realm.delete(self.dogs[index!])
+                }
+            } catch {
+                print("\(error)")
+            }
         }
     }
 }

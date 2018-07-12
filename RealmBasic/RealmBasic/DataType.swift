@@ -15,6 +15,12 @@ import RealmSwift
 class Dog: Object {
     @objc dynamic var name = ""
     @objc dynamic var age = 0
+    
+    convenience init(name: String, age: Int) {
+        self.init()
+        self.name = name
+        self.age = age
+    }
 }
 
 class Person: Object {

@@ -60,7 +60,7 @@
                                 <rect key="frame" x="0.0" y="151" width="375" height="516"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="PNa-O8-bl7" detailTextLabel="mWx-Sd-Bc1" style="IBUITableViewCellStyleSubtitle" id="rSs-3d-eDH">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="PNa-O8-bl7" detailTextLabel="mWx-Sd-Bc1" style="IBUITableViewCellStyleSubtitle" id="rSs-3d-eDH">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rSs-3d-eDH" id="EEf-q5-QgB">
@@ -85,6 +85,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="qm7-wo-rx3"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="NIb-X4-0D4"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -105,7 +109,7 @@
                     <connections>
                         <outlet property="ageTextField" destination="jgN-Wc-Fhm" id="W6G-hX-CDq"/>
                         <outlet property="nameTextField" destination="rSy-G8-XZ2" id="3oy-bl-gAy"/>
-                        <outlet property="tableView" destination="CfF-0k-Ktj" id="dh9-T7-u0A"/>
+                        <outlet property="tableView" destination="CfF-0k-Ktj" id="pXw-h3-uaU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
