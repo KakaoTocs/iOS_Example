@@ -26,7 +26,6 @@
 		AEDC732A20AD9188004FE2FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AEDC732D20AD9188004FE2FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AEDC732F20AD9188004FE2FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AEDC733620AD91CE004FE2FC /* module.map */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.map; sourceTree = "<group>"; };
 		AEDC733720AD9208004FE2FC /* MD5Hash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MD5Hash.swift; sourceTree = "<group>"; };
 		C03075A720B9797900D0DC5F /* Socket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Socket.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -45,7 +44,6 @@
 		AEDC731720AD9187004FE2FC = {
 			isa = PBXGroup;
 			children = (
-				AEDC733520AD91B8004FE2FC /* CommonCrypto */,
 				AEDC732220AD9187004FE2FC /* SocketStream */,
 				AEDC732120AD9187004FE2FC /* Products */,
 			);
@@ -73,14 +71,6 @@
 				AE1A5A3420B913DF00B9ED66 /* TypeConvert.swift */,
 			);
 			path = SocketStream;
-			sourceTree = "<group>";
-		};
-		AEDC733520AD91B8004FE2FC /* CommonCrypto */ = {
-			isa = PBXGroup;
-			children = (
-				AEDC733620AD91CE004FE2FC /* module.map */,
-			);
-			path = CommonCrypto;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
