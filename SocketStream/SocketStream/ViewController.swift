@@ -25,8 +25,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func connectAction(_ sender: Any) {
-        socket.connectToServer(host: "www.phenology.info", port: 5109)
-//        socket.connectToServer(host: "www.naver.com", port: 80)
+        socket.connectToServer(host: "www.naver.com", port: 80)
     }
     
     @IBAction func readDataAction(_ sender: Any) {
