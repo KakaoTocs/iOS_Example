@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4pt-nM-UdX">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Item-->
+        <scene sceneID="ZD7-kk-5ZA">
+            <objects>
+                <viewController id="CMq-Mz-TrA" customClass="SecondViewController" customModule="Notification" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YMr-Ne-AKO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="teh-Gz-P3K">
+                                <rect key="frame" x="153" y="318" width="68" height="30"/>
+                                <state key="normal" title="Send Noti">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendNotiButtonAction:" destination="CMq-Mz-TrA" eventType="touchUpInside" id="Mqw-h1-kPT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.33333333329999998" green="0.43921568630000002" blue="0.76078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="teh-Gz-P3K" firstAttribute="centerY" secondItem="YMr-Ne-AKO" secondAttribute="centerY" id="Nxw-T3-bdC"/>
+                            <constraint firstItem="teh-Gz-P3K" firstAttribute="centerX" secondItem="YMr-Ne-AKO" secondAttribute="centerX" id="WrQ-jn-yGo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wev-iP-KJS"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="2A3-C3-XbE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d3A-t6-Bb4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="133"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="FirstViewController" customModule="Notification" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ugb-Sd-ByJ">
+                                <rect key="frame" x="153" y="318.5" width="68" height="30"/>
+                                <state key="normal" title="Send Noti">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendNotiButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DpS-PK-s83"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Ugb-Sd-ByJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jn6-Qj-dnr"/>
+                            <constraint firstItem="Ugb-Sd-ByJ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="uXM-yc-EHO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="2h0-rQ-6ie"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="-580"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="d0J-jf-9d4">
+            <objects>
+                <viewController id="sRD-e6-Fub" customClass="ThirdViewController" customModule="Notification" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Aih-ZF-nYM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFc-db-In1">
+                                <rect key="frame" x="153" y="318" width="68" height="30"/>
+                                <state key="normal" title="Send Noti"/>
+                                <connections>
+                                    <action selector="sendNotiButtonAction:" destination="sRD-e6-Fub" eventType="touchUpInside" id="YVA-E5-irx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.91372549020000005" green="0.1176470588" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="iFc-db-In1" firstAttribute="centerX" secondItem="Aih-ZF-nYM" secondAttribute="centerX" id="4st-aS-R7e"/>
+                            <constraint firstItem="iFc-db-In1" firstAttribute="centerY" secondItem="Aih-ZF-nYM" secondAttribute="centerY" id="bIl-W3-odQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1dX-wH-JfZ"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="2cw-8C-7N9"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ypv-jW-X5g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="819"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="GSv-vp-uvn">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="4pt-nM-UdX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Yqe-kO-EeN">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="4aT-RB-suY"/>
+                        <segue destination="CMq-Mz-TrA" kind="relationship" relationship="viewControllers" id="Nx0-Q8-MwQ"/>
+                        <segue destination="sRD-e6-Fub" kind="relationship" relationship="viewControllers" id="8FQ-Yw-bWQ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ysl-h0-37j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
+        </scene>
+    </scenes>
+</document>

@@ -28,6 +28,6 @@ struct Friend: Codable {
     }
     
     let name: Name
-    let email: String
+    let email: String 
     let picture: Picture
 }
