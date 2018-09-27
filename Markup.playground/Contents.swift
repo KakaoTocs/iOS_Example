@@ -61,17 +61,17 @@ enum HelloError: Error {
   시용 예
   ----
  
-  다른 텍스트보다 네 칸 이상 들여쓰기하면 코드 블록을 만들어줍니다. 또한 강세표(backquote, ')를
+  다른 텍스트보다 네 칸 이상 들여쓰기하면 코드 블록을 만들어줍니다. 또한 강세표(backquote, `)를
       세 개 이상 한 쌍으로 묶어도 코드 블록을 만들어줍니다.
  
       // 코멘트도 넣어줄 수 있지요.
       let myName: String = "yagoom"
       try helloSwift(myName, yourAge: 100)
  
- ''''
+ ````
  let myName: String = "yagom"
  try helloSwift(myName, yourAge: 100)
- ''''
+ ````
  
  Precondition, Postcondition, Requires, Invariant, Complexity, Important, Warning,
      Author, Authors, Copyright, Date, SeeAlso, Since, Varsion, Attention, Bug,
