@@ -62,9 +62,9 @@ func readFile() {
 
 func main() {
 //    accessDirectory()
-//    createDirectory()
-//    writeFile()
-//    readFile()
+    createDirectory()
+    writeFile()
+    readFile()
 }
 
 main()
