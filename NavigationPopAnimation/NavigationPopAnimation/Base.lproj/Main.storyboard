@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1ya-yg-Rrg">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NavigationPopAnimation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dJ0-CA-8SL">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8Gf-RT-OHB">
+                                    <size key="itemSize" width="143" height="143"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="W7q-rc-isV" customClass="CollectionViewCell" customModule="NavigationPopAnimation" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="143" height="143"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="143" height="143"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QKT-Eq-29u">
+                                                    <rect key="frame" x="0.0" y="20" width="143" height="123"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="QKT-Eq-29u" secondAttribute="trailing" id="2xO-6E-g18"/>
+                                            <constraint firstItem="QKT-Eq-29u" firstAttribute="leading" secondItem="W7q-rc-isV" secondAttribute="leading" id="96H-0U-AMQ"/>
+                                            <constraint firstItem="QKT-Eq-29u" firstAttribute="top" secondItem="W7q-rc-isV" secondAttribute="top" constant="20" id="DUh-gX-bix"/>
+                                            <constraint firstAttribute="bottom" secondItem="QKT-Eq-29u" secondAttribute="bottom" id="xpd-3a-Gif"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="QKT-Eq-29u" id="Z1X-fh-fP1"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="dJ0-CA-8SL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JWB-xA-k6E"/>
+                            <constraint firstItem="dJ0-CA-8SL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="LCt-77-uO3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dJ0-CA-8SL" secondAttribute="trailing" id="lni-Fd-xE4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dJ0-CA-8SL" secondAttribute="bottom" id="nAl-U1-cTl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Fau-We-CWe"/>
+                    <connections>
+                        <outlet property="collectionView" destination="dJ0-CA-8SL" id="vVM-Eu-y7k"/>
+                        <segue destination="qqh-Ad-U7T" kind="show" identifier="detailSegue" id="Qyt-rc-PqL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="949.60000000000002" y="-564.46776611694156"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="YON-hJ-ihb">
+            <objects>
+                <viewController id="qqh-Ad-U7T" customClass="DetailViewController" customModule="NavigationPopAnimation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7RF-ZU-dUa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" tag="99" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bIU-8r-FCi">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="bIU-8r-FCi" firstAttribute="top" secondItem="cP6-PW-SLZ" secondAttribute="top" id="abg-X9-h16"/>
+                            <constraint firstItem="cP6-PW-SLZ" firstAttribute="trailing" secondItem="bIU-8r-FCi" secondAttribute="trailing" id="gUv-8u-qRu"/>
+                            <constraint firstItem="cP6-PW-SLZ" firstAttribute="bottom" secondItem="bIU-8r-FCi" secondAttribute="bottom" id="gcF-OK-r6H"/>
+                            <constraint firstItem="bIU-8r-FCi" firstAttribute="leading" secondItem="cP6-PW-SLZ" secondAttribute="leading" id="thG-S2-5RI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cP6-PW-SLZ"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="bIU-8r-FCi" id="LEF-Tk-Nnm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eug-y3-R14" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1730" y="-564"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qPe-1o-V6C">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1ya-yg-Rrg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="git-Ab-Ybs">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="SEB-zn-dTQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hAd-7f-dbh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="133.59999999999999" y="-564.46776611694156"/>
+        </scene>
+    </scenes>
+</document>
