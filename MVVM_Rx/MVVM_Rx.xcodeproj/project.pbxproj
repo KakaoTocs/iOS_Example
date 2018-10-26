@@ -14,7 +14,8 @@
 		651D2DBA218203B0002859E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 651D2DB9218203B0002859E4 /* Assets.xcassets */; };
 		651D2DBD218203B0002859E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 651D2DBB218203B0002859E4 /* LaunchScreen.storyboard */; };
 		651D2DC52182087C002859E4 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651D2DC42182087C002859E4 /* ViewModel.swift */; };
-		651D2DC7218208C1002859E4 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651D2DC6218208C1002859E4 /* Repository.swift */; };
+		651D2DC7218208C1002859E4 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651D2DC6218208C1002859E4 /* Model.swift */; };
+		65DD19E021831BA00053EFF7 /* MVVM_Cycle.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 65DD19DF21831BA00053EFF7 /* MVVM_Cycle.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +27,8 @@
 		651D2DBC218203B0002859E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		651D2DBE218203B0002859E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		651D2DC42182087C002859E4 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		651D2DC6218208C1002859E4 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		651D2DC6218208C1002859E4 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		65DD19DF21831BA00053EFF7 /* MVVM_Cycle.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MVVM_Cycle.jpg; sourceTree = SOURCE_ROOT; };
 		99DE6CA69A68B2B07DD87F71 /* Pods-MVVM_Rx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM_Rx.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MVVM_Rx/Pods-MVVM_Rx.debug.xcconfig"; sourceTree = "<group>"; };
 		BB2864F2F5A5BD6DF4310FA6 /* Pods_MVVM_Rx.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVM_Rx.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE7F35C4101BA2D87FE11A5F /* Pods-MVVM_Rx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM_Rx.release.xcconfig"; path = "Pods/Target Support Files/Pods-MVVM_Rx/Pods-MVVM_Rx.release.xcconfig"; sourceTree = "<group>"; };
@@ -82,10 +84,11 @@
 		651D2DB1218203AF002859E4 /* MVVM_Rx */ = {
 			isa = PBXGroup;
 			children = (
+				65DD19DF21831BA00053EFF7 /* MVVM_Cycle.jpg */,
 				651D2DB2218203AF002859E4 /* AppDelegate.swift */,
 				651D2DB4218203AF002859E4 /* ViewController.swift */,
 				651D2DC42182087C002859E4 /* ViewModel.swift */,
-				651D2DC6218208C1002859E4 /* Repository.swift */,
+				651D2DC6218208C1002859E4 /* Model.swift */,
 				651D2DB6218203AF002859E4 /* Main.storyboard */,
 				651D2DB9218203B0002859E4 /* Assets.xcassets */,
 				651D2DBB218203B0002859E4 /* LaunchScreen.storyboard */,
@@ -156,6 +159,7 @@
 			files = (
 				651D2DBD218203B0002859E4 /* LaunchScreen.storyboard in Resources */,
 				651D2DBA218203B0002859E4 /* Assets.xcassets in Resources */,
+				65DD19E021831BA00053EFF7 /* MVVM_Cycle.jpg in Resources */,
 				651D2DB8218203AF002859E4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,7 +215,7 @@
 				651D2DB5218203AF002859E4 /* ViewController.swift in Sources */,
 				651D2DC52182087C002859E4 /* ViewModel.swift in Sources */,
 				651D2DB3218203AF002859E4 /* AppDelegate.swift in Sources */,
-				651D2DC7218208C1002859E4 /* Repository.swift in Sources */,
+				651D2DC7218208C1002859E4 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
