@@ -2,7 +2,7 @@
 //  TDDTests.swift
 //  TDDTests
 //
-//  Created by Jinu Kim on 27/11/2018.
+//  Created by Jinu Kim on 06/12/2018.
 //  Copyright © 2018 Jinu Kim. All rights reserved.
 //
 
@@ -13,11 +13,13 @@ class TDDTests: XCTestCase {
     
     let sut = ViewController()
     
+    // setup / tearDown 테스트 메소드의 호출 전/후에 한번 호출
+    // 초기화 코드
     override func setUp() {
         _ = sut.view
     }
     
-    // 함수 끝나고 항상 실행
+    // 해체 코드
     override func tearDown() {
         sut.likeCount = 0
     }
