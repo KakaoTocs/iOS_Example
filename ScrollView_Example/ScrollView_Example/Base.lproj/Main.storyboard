@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ScrollView_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYk-ua-ZLP">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <imageView multipleTouchEnabled="YES" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SIVA.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="fMd-xo-wiC">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                        <color key="backgroundColor" red="0.0" green="0.70980392160000005" blue="0.56470588239999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="fMd-xo-wiC" secondAttribute="trailing" id="4LC-b4-aJY"/>
+                                    <constraint firstItem="fMd-xo-wiC" firstAttribute="centerY" secondItem="iYk-ua-ZLP" secondAttribute="centerY" id="GcS-KU-MNJ"/>
+                                    <constraint firstItem="fMd-xo-wiC" firstAttribute="leading" secondItem="iYk-ua-ZLP" secondAttribute="leading" id="IDf-Yh-6pD"/>
+                                    <constraint firstItem="fMd-xo-wiC" firstAttribute="top" secondItem="iYk-ua-ZLP" secondAttribute="top" id="iJt-yZ-qcz"/>
+                                    <constraint firstAttribute="bottom" secondItem="fMd-xo-wiC" secondAttribute="bottom" id="j8I-8u-aOc"/>
+                                    <constraint firstItem="fMd-xo-wiC" firstAttribute="centerX" secondItem="iYk-ua-ZLP" secondAttribute="centerX" id="lsE-u9-52V"/>
+                                </constraints>
+                            </scrollView>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nk2-dt-X7N">
+                                <rect key="frame" x="20" y="40" width="335" height="607"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nk2-dt-X7N" secondAttribute="bottom" constant="20" id="OJg-tI-we5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nk2-dt-X7N" secondAttribute="trailing" constant="20" id="Psn-a3-6HC"/>
+                            <constraint firstItem="nk2-dt-X7N" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="TWS-vn-ErJ"/>
+                            <constraint firstItem="nk2-dt-X7N" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="cKC-e8-YPi"/>
+                            <constraint firstItem="iYk-ua-ZLP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lqA-PT-OE6"/>
+                            <constraint firstItem="iYk-ua-ZLP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="oY1-al-FMs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iYk-ua-ZLP" secondAttribute="trailing" id="tP6-Cj-Lk6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iYk-ua-ZLP" secondAttribute="bottom" id="tsO-iE-Z3p"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="gridView" destination="nk2-dt-X7N" id="21P-QM-JaV"/>
+                        <outlet property="imageView" destination="fMd-xo-wiC" id="q7F-He-X1Z"/>
+                        <outlet property="scrollView" destination="iYk-ua-ZLP" id="Uxq-uz-1tt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="SIVA.jpg" width="900" height="900"/>
+    </resources>
+</document>
