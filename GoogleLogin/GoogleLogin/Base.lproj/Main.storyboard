@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GoogleLogin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QeW-ki-LhW" customClass="GIDSignInButton">
+                                <rect key="frame" x="67.5" y="593" width="240" height="64"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="EOt-yy-ncO"/>
+                                    <constraint firstAttribute="height" constant="64" id="Wm7-sF-eKL"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="didTapSignOut:" destination="BYZ-38-t0r" eventType="valueChanged" id="Iy4-Dt-Pop"/>
+                                </connections>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Not Login" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Drk-o2-0cd">
+                                <rect key="frame" x="10" y="30" width="355" height="553"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="QeW-ki-LhW" secondAttribute="bottom" constant="10" id="BIw-nq-7ar"/>
+                            <constraint firstItem="QeW-ki-LhW" firstAttribute="top" secondItem="Drk-o2-0cd" secondAttribute="bottom" constant="10" id="Yms-qR-5od"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Drk-o2-0cd" secondAttribute="trailing" constant="10" id="kEh-12-owN"/>
+                            <constraint firstItem="Drk-o2-0cd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="md3-Ui-Phg"/>
+                            <constraint firstItem="QeW-ki-LhW" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="o6g-gy-3W5"/>
+                            <constraint firstItem="Drk-o2-0cd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="oaL-Oc-fZx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="loginResultView" destination="Drk-o2-0cd" id="idQ-9O-1Y7"/>
+                        <outlet property="signInButton" destination="QeW-ki-LhW" id="8RT-en-dXE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

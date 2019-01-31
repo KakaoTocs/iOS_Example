@@ -26,6 +26,7 @@ class ViewController: UIViewController {
         if FBSDKAccessToken.current() != nil {
             let token = FBSDKAccessToken.current()
             self.userInfoLabel.text = "token: \(token?.userID)\nappID: \(token?.appID))"
+            print("\(token?.tokenString)")
             self.loginResultLabel.text = "Keep User Login"
         } else {
             self.loginResultLabel.text = "Not yet login"
@@ -42,6 +43,7 @@ extension ViewController: FBSDKLoginButtonDelegate {
         } else {
             let token = FBSDKAccessToken.current()
             self.userInfoLabel.text = "token: \(token?.userID)\nappID: \(token?.appID))"
+            print("\(token?.tokenString)")
             self.loginResultLabel.text = "User Login"
         }
     }
