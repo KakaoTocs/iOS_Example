@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TapTic_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="R60-UX-bIy">
+                                <rect key="frame" x="120" y="120" width="135" height="447"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5At-qX-74v">
+                                        <rect key="frame" x="0.0" y="0.0" width="135" height="73.5"/>
+                                        <color key="backgroundColor" red="0.29411764705882354" green="0.73725490196078436" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="impactOccured"/>
+                                        <connections>
+                                            <action selector="impactOccuredButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cNG-z5-61y"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3JR-5H-jHG">
+                                        <rect key="frame" x="0.0" y="93.5" width="135" height="73.5"/>
+                                        <color key="backgroundColor" red="0.38039215686274508" green="0.75294117647058822" blue="0.74901960784313726" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="selectionChanged"/>
+                                        <connections>
+                                            <action selector="selectionChangedButtionAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6fi-8K-qZy"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aVE-tN-WN7">
+                                        <rect key="frame" x="0.0" y="187" width="135" height="73"/>
+                                        <color key="backgroundColor" red="0.73333333333333328" green="0.87058823529411766" blue="0.83921568627450982" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="noti_success"/>
+                                        <connections>
+                                            <action selector="notificationSuccessButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gzd-vT-2si"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aZC-25-8E5">
+                                        <rect key="frame" x="0.0" y="280" width="135" height="73.5"/>
+                                        <color key="backgroundColor" red="1" green="0.71372549019607845" blue="0.72549019607843135" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="noti_warning"/>
+                                        <connections>
+                                            <action selector="notificationWarringButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="48O-Mp-JvQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nqA-Rd-q3y">
+                                        <rect key="frame" x="0.0" y="373.5" width="135" height="73.5"/>
+                                        <color key="backgroundColor" red="0.98039215686274506" green="0.8901960784313725" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="noti_error"/>
+                                        <connections>
+                                            <action selector="notificationErrorButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uuh-Mk-VqW"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="5At-qX-74v" firstAttribute="height" secondItem="3JR-5H-jHG" secondAttribute="height" id="5zk-u7-ZYU"/>
+                                    <constraint firstItem="5At-qX-74v" firstAttribute="height" secondItem="nqA-Rd-q3y" secondAttribute="height" id="DGn-IY-tOv"/>
+                                    <constraint firstItem="5At-qX-74v" firstAttribute="height" secondItem="aZC-25-8E5" secondAttribute="height" id="JTX-Nq-Cfh"/>
+                                    <constraint firstItem="5At-qX-74v" firstAttribute="height" secondItem="aVE-tN-WN7" secondAttribute="height" id="yt1-0P-6r9"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="R60-UX-bIy" secondAttribute="trailing" constant="120" id="2ke-28-S09"/>
+                            <constraint firstItem="R60-UX-bIy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="H7u-Pq-19V"/>
+                            <constraint firstItem="R60-UX-bIy" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="XCA-Ml-Vhf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="R60-UX-bIy" secondAttribute="bottom" constant="100" id="jY6-4Z-9pr"/>
+                            <constraint firstItem="R60-UX-bIy" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="pkv-5n-j0v"/>
+                            <constraint firstItem="R60-UX-bIy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="120" id="tlz-7E-cIm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
